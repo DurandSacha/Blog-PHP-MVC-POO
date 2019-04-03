@@ -1,0 +1,12 @@
+{
+    "name": "blog/dist",
+    "require": {
+        "twbs/bootstrap": "^4.3"
+    },
+    "authors": [
+        {
+            "name": "sacha",
+            "email": "sacha6623@gmail.com"
+        }
+    ]
+}
