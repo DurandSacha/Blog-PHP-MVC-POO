@@ -2,4 +2,15 @@
     text-align: center;
 }
 
-
+hr{
+    width: 70%;
+    margin-left: 15%;
+    background-color: yellow;
+}
+footer{
+    margin-top: 3%;
+}
+#post{
+    padding-left: 7%;
+    padding-right: 7%;
+}
