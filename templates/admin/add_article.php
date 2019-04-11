@@ -1,6 +1,11 @@
 <?php
 $this->title = "Ajouter un article";
 ?>
+<?php
+include '../templates/inc/baseAdmin.php';
+?>
+
+
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div>

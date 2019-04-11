@@ -1,7 +1,7 @@
 <?php
 require '../config/dev.php';
 require '../config/Autoloader.php';
-require '../public/vendor/autoload.php';
+require '../vendor/autoload.php';
 \App\config\Autoloader::register();
 
 session_start();

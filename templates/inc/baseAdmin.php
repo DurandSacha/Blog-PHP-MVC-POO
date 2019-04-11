@@ -1,9 +1,3 @@
-<?php
-/* Verifier que l'on est bien  en session Admin, sinon afficher une erreur */
-?>
-
-
-
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-top navbar-custom">
     <div class="container">
@@ -22,13 +16,13 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="index.php?#portfolio">Gerer les articles</a>
+                    <a href="index.php?route=adminarticle">Gerer les articles</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="index.php?#about">Gerer les commentaires</a>
+                    <a href="index.php?route=admincommentaire">Gerer les commentaires</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="index.php?#contact">Gerer les droits</a>
+                    <a href="index.php?route=admindroit">Gerer les droits</a>
                 </li>
 
                 <li class="page-scroll">

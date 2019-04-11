@@ -26,6 +26,13 @@ class FrontController
             'articles' => $articles
         ]);
     }
+    public function blog()
+    {
+        $articles = $this->articleDAO->getArticles();
+        $this->view->render('blog', [
+            'articles' => $articles
+        ]);
+    }
 
     public function article($id)
     {
@@ -36,4 +43,5 @@ class FrontController
             'comments' => $comments
         ]);
     }
+
 }

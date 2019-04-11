@@ -1,6 +1,9 @@
 <?php
 $this->title = "Retirer un article";
 ?>
+<?php
+include '../templates/inc/baseAdmin.php';
+?>
 <h1>Mon blog</h1>
 <div>
 

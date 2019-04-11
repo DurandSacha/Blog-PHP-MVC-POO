@@ -2,15 +2,18 @@
 $this->title = "Article";
 ?>
 <h1>Mon blog</h1>
-
+<br/>
+<hr>
+<br/>
 <div id="post">
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
+
     <p><?= htmlspecialchars($article->getContent());?></p>
     <p><?= htmlspecialchars($article->getAuthor());?></p>
     <p>Créé le : <?= htmlspecialchars($article->getDateAdded());?></p>
 </div>
 <br>
-<a href="../public/index.php">Retour à la liste des articles</a>
+
 <div id="comments" class="text-left" style="margin-left: 50px">
     <h3>Commentaires</h3>
     <?php
@@ -26,3 +29,4 @@ $this->title = "Article";
     }
     ?>
 </div>
+<a href="../public/index.php">Retour à la liste des articles</a>

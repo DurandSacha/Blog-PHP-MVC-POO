@@ -29,7 +29,7 @@ class ConnexionController
                 if($role[0] == 'administrator'){
                     $_SESSION['admin'] = 'true' ;
                     $_SESSION['membre'] = 'true' ;
-                    $this->view->render('backOffice', [
+                    $this->view->render('admin/adminArticle', [
                     ]);
                 }
                 else if($role[0] == 'member'){
@@ -64,6 +64,13 @@ class ConnexionController
             $this->view->render('register', [
             ]);
         }
+    }
+    public function deconnect()
+    {
+        unset($_SESSION['admin']);
+        unset($_SESSION['membre']);
+        $this->view->render('home', [
+        ]);
     }
 }
 

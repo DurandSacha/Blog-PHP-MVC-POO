@@ -2,15 +2,25 @@
     text-align: center;
 }
 
-hr{
-    width: 70%;
-    margin-left: 15%;
-    background-color: yellow;
+h1{
+    margin-bottom: 3.5%;
 }
-footer{
-    margin-top: 3%;
-}
+
 #post{
-    padding-left: 7%;
-    padding-right: 7%;
+    border: 1px solid red;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#comments{
+    border : 1px solid blue;
+    margin-top: 15px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#single_comment{
+    background-color: burlywood;
+    margin: 3%;
+    padding: 15px;
 }

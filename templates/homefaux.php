@@ -1,4 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Freelancer - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
 
 <body id="page-top" class="index">
 
@@ -10,7 +41,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">Sacha Durand</a>
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,10 +59,6 @@
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
-
-                    <li class="page-scroll">
-                        <a href="../public/index.php?route=blog">Blog</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -46,9 +73,9 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/profile.png" alt="">
                     <div class="intro-text">
-                        <span class="name">Sacha Durand</span>
+                        <span class="name">Start Bootstrap</span>
                         <hr class="star-light">
-                        <span class="skills">Web Developer - Back-end Developer - User Experience Designer</span>
+                        <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
                     </div>
                 </div>
             </div>
@@ -140,12 +167,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML,
-                        CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects
-                        , this template is the perfect starting point!</p>
+                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
@@ -217,14 +242,9 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Member Space</h3>
-                        <p> Connectez vous
-                            <br>
-                        <a href="index.php?route=connect"> ici</a></p>
-
-                        <p> Inscrivez vous <br/>
-                            <a href="index.php?route=register"> ici</a>
-                        </p>
+                        <h3>Location</h3>
+                        <p>3481 Melrose Place
+                            <br>Beverly Hills, CA 90210</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
@@ -247,7 +267,7 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>About me</h3>
+                        <h3>About Freelancer</h3>
                         <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                     </div>
                 </div>
@@ -257,7 +277,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Sacha Durand
+                        Copyright &copy; Your Website 2016
                     </div>
                 </div>
             </div>
@@ -270,15 +290,6 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
-
-
-
-
-
-
-
-
-
 
     <!-- Portfolio Modals -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -296,8 +307,7 @@
                             <h2>Project Title</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -334,8 +344,7 @@
                             <h2>Project Title</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -372,8 +381,7 @@
                             <h2>Project Title</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -410,8 +418,7 @@
                             <h2>Project Title</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -448,8 +455,7 @@
                             <h2>Project Title</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -486,8 +492,7 @@
                             <h2>Project Title</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -510,7 +515,21 @@
         </div>
     </div>
 
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
 
 </body>
 

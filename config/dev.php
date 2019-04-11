@@ -1,7 +1,7 @@
 <?php
 
 const HOST = 'localhost';
-const DB_NAME = 'mvc_exercice';
+const DB_NAME = 'bdd_projet5';
 const CHARSET = 'utf8';
 
 const DB_HOST = 'mysql:host='.HOST.';dbname='.DB_NAME.';charset='.CHARSET;
