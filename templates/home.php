@@ -144,15 +144,17 @@ $this->title = "Acceuil";
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML,
-                        CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                    <p>Je suis un développeur web spécialisé dans le back-end. J'utilise PHP et symfony pour remplir toute sorte de mission.
+                    Je maitrise aussi d'autres technologie comme les langage lié au bases de donnée, le HTML/CSS. J'ai aussi quelques notions de
+                    python et de C</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects
-                        , this template is the perfect starting point!</p>
+                    <p>Cela fait longtemps que je suis passionné par la technologie du web. J’ai donc chercher a m’instruire afin de construire
+                        une carrière a partir de ma passion. Le développement back-end est ma spécialité.
+                    </p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
+                    <a href="index.php?route=cv" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Download My CV
                     </a>
                 </div>
@@ -171,34 +173,35 @@ $this->title = "Acceuil";
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
+                    <?php// var_dump($_POST); ?>
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form name="sentMessage" id="contactForm" method="POST" action="index.php?route=contact">
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                                <input type="text" class="form-control" placeholder="Name" id="name" name="name" required data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" name="phone"required data-validation-required-message="Please enter your phone number.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <textarea rows="5" class="form-control" placeholder="Message" id="message" name="message"required data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -223,7 +226,7 @@ $this->title = "Acceuil";
                     <div class="footer-col col-md-4">
                         <h3>Member Space</h3>
                         <?php
-                        if(isset($_SESSION['admin']) == 'true' or isset($_SESSION['membre']) == 'true') {
+                        if(isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
                             ?>
                         <a href="index.php?route=deconnexion"> Se déconnecter</a>
 
@@ -244,20 +247,13 @@ $this->title = "Acceuil";
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="https://github.com/DurandSacha/" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="https://www.linkedin.com/in/sacha-durand-687032150" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">

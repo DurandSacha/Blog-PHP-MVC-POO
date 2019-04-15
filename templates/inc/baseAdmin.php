@@ -1,5 +1,7 @@
+<link href="../public/css/style.css">
 <!-- Navigation -->
-<nav id="mainNav" class="navbar navbar-default navbar-top navbar-custom">
+
+<nav id="mainNav" class="navbar navbar-default  navbar-fixed-top navbar-top navbar-custom">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -34,3 +36,7 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+</br>
+</br>
+</br>
+</br>

@@ -4,6 +4,7 @@ $this->title = "Retirer un article";
 <?php
 include '../templates/inc/baseAdmin.php';
 ?>
+<div class="row">
 <h1>Mon blog</h1>
 <div>
 
@@ -36,4 +37,5 @@ include '../templates/inc/baseAdmin.php';
         <input type="submit" value="Envoyer" id="submit" name="submit">
     </form>
     <a href="../public/index.php">Retour à l'accueil</a>
+</div>
 </div>

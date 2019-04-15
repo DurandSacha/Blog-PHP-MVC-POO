@@ -5,11 +5,13 @@ namespace App\src\controller;
 use App\src\DAO\UserDAO;
 use App\src\model\View;
 use App\src\model\User;
+use App\src\DAO\ArticleDAO;
 
 class ConnexionController
 {
     private $view;
     private $user;
+    private $articleDAO;
 
     public function __construct()
     {
@@ -22,19 +24,27 @@ class ConnexionController
         if (isset($_POST['email']) && ($_POST['password'])) {
 
             //verifier que le membre existe
-            $result = $this->userDAO->verificationBDD($_POST['email'],$_POST['password']);
+            //$password = password_hash($_POST['password'],PASSWORD_BCRYPT);
+
+
+            $hash = $this->userDAO->getHash($_POST['email']);
+
+            $result = $this->userDAO->verificationBDD($_POST['email'],$hash[0]);
+            var_dump($hash);
             if ($result == true) {
 
                 $role = $this->userDAO->verifyRole($_POST['email']);
                 if($role[0] == 'administrator'){
-                    $_SESSION['admin'] = 'true' ;
-                    $_SESSION['membre'] = 'true' ;
-                    $this->view->render('admin/adminArticle', [
+                    $_SESSION['user'] = 'admin' ;
+
+
+
+                    $this->view->render('admin/back-office', [
                     ]);
                 }
                 else if($role[0] == 'member'){
-                    $_SESSION['admin'] = 'false' ;
-                    $_SESSION['membre'] = 'true';
+                    $_SESSION['user'] = 'membre' ;
+
                     header('Location: ../public/index.php');
                 }
             }
@@ -53,9 +63,10 @@ class ConnexionController
     public function register($post)
     {
         if (isset($_POST['email']) && ($_POST['username']) && ($_POST['password'])  ) {
-            $this->userDAO->addUser($_POST['email'],$_POST['password'],$_POST['username']);
+            $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
+            $this->userDAO->addUser($_POST['email'],$password,$_POST['username']);
 
-            $this->view->render('../public/home', [
+            $this->view->render('home', [
             ]);
 
         }
@@ -67,8 +78,8 @@ class ConnexionController
     }
     public function deconnect()
     {
-        unset($_SESSION['admin']);
-        unset($_SESSION['membre']);
+
+        unset($_SESSION['user']);
         $this->view->render('home', [
         ]);
     }

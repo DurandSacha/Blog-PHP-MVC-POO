@@ -37,12 +37,17 @@ class Router
                     $id = $this->getParametre($_POST, 'id');
                     $this->backController->rmArticle($id);
                 }
+                else if($_GET['route'] === 'editArticle') {
+                    $id = $this->getParametre($_POST, 'id');
+                    $this->backController->editArticle($id);
+                }
                 else if($_GET['route'] === 'blog') {
                     $this->frontController->blog();
                 }
                 else if($_GET['route'] === 'connect') {
-
                     $this->connexionController->connect($_POST);
+                    //$this->backController-> adminArticle();
+
                 }
                 else if($_GET['route'] === 'register') {
                     $this->connexionController->register($_POST);
@@ -51,7 +56,7 @@ class Router
                     $this->connexionController->deconnect();
                 }
                 else if($_GET['route'] === 'adminarticle') {
-                    $this->backController->adminArticle();
+                    $this->backController->adminArticle($_POST);
                 }
                 else if($_GET['route'] === 'admincommentaire') {
                     $this->backController->adminCommentaire();
@@ -59,10 +64,12 @@ class Router
                 else if($_GET['route'] === 'admindroit') {
                     $this->backController->adminDroit();
                 }
-
-
-
-
+                else if($_GET['route'] === 'cv') {
+                    $this->frontController->downloadCv();
+                }
+                else if($_GET['route'] === 'contact') {
+                    $this->frontController->contact($_POST);
+                }
                 else{
                     $this->errorController->error();
                 }

@@ -6,6 +6,7 @@
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
+  /*text-align: center;*/
 }
 p {
   font-size: 20px;
@@ -502,4 +503,40 @@ fieldset[disabled] .btn-success.active {
 .portfolio-modal .modal-backdrop {
   opacity: 0;
   display: none;
+}
+body{
+ text-align: center;
+}
+
+/* Ajout */ /********************************************************************/
+
+#nav-second{
+  flex-direction: row;
+  display: flex;
+  justify-content:space-around ;
+
+}
+#nav-second a{
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+.box{
+  /*border: 2px solid rebeccapurple;*/
+  padding: 2%;
+  margin-bottom: 2%;
+  background-color: rgba(240,240,240,0.5);
+}
+.space{
+  margin: 0%;
+}
+#tinymce, div{
+  overflow: hidden;
+}
+.row{
+  margin: 0;
+  padding: 0;
+}
+.row:first-of-type{
+  margin-top: 4%;
 }

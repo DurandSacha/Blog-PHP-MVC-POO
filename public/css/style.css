@@ -24,3 +24,10 @@ h1{
     margin: 3%;
     padding: 15px;
 }
+#tinymce{
+    width: 80%;
+    margin-left: 10%;
+}
+body{
+    border : 2px solid red;
+}

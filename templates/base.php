@@ -7,11 +7,11 @@ require "../vendor/autoload.php";
 
 <head>
     <!-- Bootstrap Core CSS -->
-    <lin href="../public/css/style.css"></lin>
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../public/css/style.css">
     <!-- Theme CSS -->
-    <link href="../public/css/freelancer.min.css" rel="stylesheet">
+    <link href="../public/css/freelancer.css" rel="stylesheet">
+
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

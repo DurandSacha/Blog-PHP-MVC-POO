@@ -1,5 +1,5 @@
 <?php
-$this->title = "Accueil";
+$this->title = "Blog";
 ?>
 <br/>
 <br/>
