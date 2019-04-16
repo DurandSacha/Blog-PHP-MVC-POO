@@ -24,11 +24,53 @@ class BackController
         if (isset($_SESSION['user']) == 'admin') {
             $articles = $this->articleDAO->getArticles();
 
+            $blogpost = $this->articleDAO->getArticle(1);
+
             $this->view->render('admin/adminArticle', [
                 'articles' => $articles,
+                'blogpost' => $blogpost,
             ]);
         }
     }
+
+    public function editArticle($id)
+    {
+        if (isset($_SESSION['user']) == 'admin') {
+
+            if (isset($_POST['id'])){
+                $blogpost = $this->articleDAO->getArticle($id);
+                $articles = $this->articleDAO->getArticles();
+
+                $this->view->render('admin/adminArticle', [
+                    'blogpost' => $blogpost,
+                    'articles' => $articles
+                ]);
+            }
+            else{
+                $this->view->render('home', [
+
+                ]);
+            }
+        }
+
+    }
+    public function updatePost($post)
+    {
+        if (isset($_SESSION['user']) == 'admin') {
+
+
+            if (isset($post['submit'])) {
+                $id = $_POST['id'];
+
+                $articleDAO = new ArticleDAO();
+                $articleDAO->updatePost($_POST['title'],$_POST['content'],$_POST['author'],$id);
+            }
+            $this->editArticle($id);
+
+
+        }
+    }
+
 
     public function adminCommentaire()
     {
@@ -83,25 +125,6 @@ class BackController
                 'articles' => $articles,
             ]);
         }
-    }
-
-    public function editArticle($idArt)
-    {
-        if (isset($_SESSION['user']) == 'admin') {
-
-            $article = $this->articleDAO->getArticle($idArt);
-            $articles = $this->articleDAO->getArticles();
-
-            $this->view->render('admin/adminArticle', [
-                'articles' => $articles,
-                'article' => $article
-            ]);
-
-        }
-
-        //update date mise a jour
-
-
     }
 
 

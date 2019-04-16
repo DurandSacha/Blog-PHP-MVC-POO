@@ -540,3 +540,7 @@ body{
 .row:first-of-type{
   margin-top: 4%;
 }
+.none{
+  display: none;
+
+}

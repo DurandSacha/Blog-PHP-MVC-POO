@@ -44,10 +44,11 @@ class ArticleDAO extends DAO
         $this->sql($sql,[$id]);
     }
 
-    public function updatedate($id)
-    { // a voir
-        $sql = 'UPDATE FROM article WHERE id=?';
-        $this->sql($sql,[$id]);
+    public function updatePost($title,$content,$author,$id)
+    {
+        $sql = 'UPDATE article SET title= ?, content= ?, author = ?, date_added = NOW() WHERE id=?;';
+        $this->sql($sql,[$title, $content, $author, $id]);
+
     }
 
     // hydratation 

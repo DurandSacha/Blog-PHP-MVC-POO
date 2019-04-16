@@ -38,8 +38,11 @@ class Router
                     $this->backController->rmArticle($id);
                 }
                 else if($_GET['route'] === 'editArticle') {
+                    $this->backController->editArticle($_POST['id']);
+                }
+                else if($_GET['route'] === 'majArticle') {
                     $id = $this->getParametre($_POST, 'id');
-                    $this->backController->editArticle($id);
+                    $this->backController->updatePost($_POST);
                 }
                 else if($_GET['route'] === 'blog') {
                     $this->frontController->blog();

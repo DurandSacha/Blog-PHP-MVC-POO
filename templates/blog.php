@@ -16,10 +16,10 @@ foreach ($articles as $article)
 ?>
     <div id="post">
         <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
-        <p><?= htmlspecialchars($article->getContent());?></p>
+        <p><?= substr(htmlspecialchars($article->getContent()), 0, 30);?></p>
         <!--faire un excerpt -->
         <p><?= htmlspecialchars($article->getAuthor());?></p>
-        <p>Créé le : <?= htmlspecialchars($article->getDateAdded());?></p>
+        <p>Mis a jour le  : <?= htmlspecialchars($article->getDateAdded());?></p>
         <br/>
         <hr/>
     </div>

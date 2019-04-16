@@ -30,7 +30,6 @@ class ConnexionController
             $hash = $this->userDAO->getHash($_POST['email']);
 
             $result = $this->userDAO->verificationBDD($_POST['email'],$hash[0]);
-            var_dump($hash);
             if ($result == true) {
 
                 $role = $this->userDAO->verifyRole($_POST['email']);

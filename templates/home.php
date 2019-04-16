@@ -228,7 +228,8 @@ $this->title = "Acceuil";
                         <?php
                         if(isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
                             ?>
-                        <a href="index.php?route=deconnexion"> Se déconnecter</a>
+                            <a href="index.php?route=adminarticle">Le back-office</a> <br/><br/>
+                            <a href="index.php?route=deconnexion"> Se déconnecter</a>
 
                         <?php }
                         else{
