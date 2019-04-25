@@ -19,6 +19,12 @@ class UserDAO extends DAO
         $role = $result->fetch();
         return $role;
     }
+    public function getName($email){
+        $sql = 'SELECT username FROM user WHERE email = ?';
+        $result = $this->sql($sql,[$email]);
+        $username = $result->fetch();
+        return $username;
+    }
     public function getHash($email){
         $sql = 'SELECT password FROM user WHERE email = ?';
         $result = $this->sql($sql,[$email]);

@@ -12,6 +12,8 @@ class Comment
     
     private $dateAdded;
 
+    private $status;
+
     
     public function getId()
     {
@@ -51,5 +53,25 @@ class Comment
     public function setDateAdded($dateAdded)
     {
         $this->dateAdded = $dateAdded;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    public function getArticle_id()
+    {
+        return $this->article_id;
+    }
+
+    public function setArticle_id($article_id)
+    {
+        $this->article_id = $article_id;
     }
 }

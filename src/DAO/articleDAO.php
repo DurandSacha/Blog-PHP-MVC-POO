@@ -26,7 +26,7 @@ class ArticleDAO extends DAO
         if($row) {
             return $this->buildObject($row);
         } 
-        echo 'Aucun article existant avec cet identifiant';
+        echo 'Aucun article existant avec cet identifiant :(';
     }
 
     public function addArticle($article)

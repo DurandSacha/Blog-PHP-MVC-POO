@@ -34,11 +34,11 @@ class Router
                     $this->backController->addArticle($_POST);
                 }
                 else if($_GET['route'] === 'rmArticle') {
-                    $id = $this->getParametre($_POST, 'id');
+                    $id = $this->getParametre($_GET, 'id');
                     $this->backController->rmArticle($id);
                 }
                 else if($_GET['route'] === 'editArticle') {
-                    $this->backController->editArticle($_POST['id']);
+                    $this->backController->editArticle($_GET);
                 }
                 else if($_GET['route'] === 'majArticle') {
                     $id = $this->getParametre($_POST, 'id');
@@ -58,12 +58,35 @@ class Router
                 else if($_GET['route'] === 'deconnexion') {
                     $this->connexionController->deconnect();
                 }
+                else if($_GET['route'] === 'back-office') {
+                    $this->backController->backOffice();
+                }
                 else if($_GET['route'] === 'adminarticle') {
                     $this->backController->adminArticle($_POST);
+                }
+                else if($_GET['route'] === 'adminprojet') {
+                    $this->backController->adminProjet();
                 }
                 else if($_GET['route'] === 'admincommentaire') {
                     $this->backController->adminCommentaire();
                 }
+                else if($_GET['route'] === 'admincommentaireWait') {
+                    $this->backController->adminCommentaireWaiting();
+                }
+                else if($_GET['route'] === 'addComment') {
+                    $this->backController->addComment($_POST);
+                }
+
+
+
+                else if($_GET['route'] === 'acceptComment') {
+                    $this->backController->acceptComment($_GET['id']);
+                }
+                else if($_GET['route'] === 'declineComment') {
+                    $this->backController->declineComment($_GET['id']);
+                }
+
+
                 else if($_GET['route'] === 'admindroit') {
                     $this->backController->adminDroit();
                 }

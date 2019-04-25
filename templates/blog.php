@@ -16,8 +16,8 @@ foreach ($articles as $article)
 ?>
     <div id="post">
         <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
-        <p><?= substr(htmlspecialchars($article->getContent()), 0, 30);?></p>
-        <!--faire un excerpt -->
+        <p><?= html_entity_decode(substr(htmlspecialchars($article->getContent()), 0, 230))    ;?></p>
+
         <p><?= htmlspecialchars($article->getAuthor());?></p>
         <p>Mis a jour le  : <?= htmlspecialchars($article->getDateAdded());?></p>
         <br/>
@@ -27,8 +27,6 @@ foreach ($articles as $article)
 <?php
 }
 ?>
-<a href="../public/index.php?route=addArticle">Ajouter un article ici</a><br/>
-<a href="../public/index.php?route=rmArticle">Retirer un article ici</a>
 
 
 <body id="page-top" class="index">
@@ -61,7 +59,7 @@ foreach ($articles as $article)
                 </li>
 
                 <li class="page-scroll">
-                    <a href="../public/index.php?route=blog">Blog</a>
+                    <a href="../public/index.php?route=blog" class="btn btn-success btn-lg">Blog</a>
                 </li>
             </ul>
         </div>
@@ -79,12 +77,12 @@ foreach ($articles as $article)
             <div class="row">
                 <div class="footer-col col-md-4">
                     <h3>Member Space</h3>
-                    <p> Connectez vous
-                        <br>
-                        <a href="index.php?route=connect"> ici</a></p>
+
+
+                        <a href="index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p>
 
                     <p> Inscrivez vous <br/>
-                        <a href="index.php?route=register"> ici</a>
+                        <a href="index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
                     </p>
                 </div>
                 <div class="footer-col col-md-4">

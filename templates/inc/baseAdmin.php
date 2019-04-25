@@ -1,4 +1,4 @@
-<link href="../public/css/style.css">
+<link href="../public/css/freelancer.css">
 <!-- Navigation -->
 
 <nav id="mainNav" class="navbar navbar-default  navbar-fixed-top navbar-top navbar-custom">
@@ -8,7 +8,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#page-top">Sacha Durand</a>
+            <a class="navbar-brand" href="../public/index.php">Sacha Durand</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,8 +17,11 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li class="page-scroll">
-                    <a href="index.php?route=adminarticle">Gerer les articles</a>
+                <li class=" navli page-scroll">
+                    <a href="index.php?route=back-office" class="">Acceuil</a>
+                </li>
+                <li class=" navli page-scroll">
+                    <a href="index.php?route=adminarticle" class="">Gerer les articles</a>
                 </li>
                 <li class="page-scroll">
                     <a href="index.php?route=admincommentaire">Gerer les commentaires</a>
@@ -27,9 +30,11 @@
                     <a href="index.php?route=admindroit">Gerer les droits</a>
                 </li>
 
-                <li class="page-scroll">
-                    <a href="../public/index.php">Retour au site</a>
+
+                <!--<li class="page-scroll">
+                    <a href="../public/index.php?route=adminprojet">Gerer les projets</a>
                 </li>
+                -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->

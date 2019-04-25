@@ -526,6 +526,7 @@ body{
   padding: 2%;
   margin-bottom: 2%;
   background-color: rgba(240,240,240,0.5);
+  border: 4px solid #18BC9C;
 }
 .space{
   margin: 0%;
@@ -543,4 +544,63 @@ body{
 .none{
   display: none;
 
+}
+.admin h2,.admin h3{
+  color: #18BC9C;
+}
+.admin #submit{
+  background:#18BC9C ;
+  border: 1px solid #18BC9C;
+  padding: 13px;
+  margin-bottom: 2%;
+}
+.navli a{
+  color :red;
+}
+.small{
+  margin-bottom: 1% ;
+}
+.push{
+  margin-left: 20px;
+}
+#comments{
+  text-align: center;
+}
+#post h2{
+  color: #18BC9C;
+
+}
+#post{
+  padding-left:9.5%;
+  padding-right:9.5%;
+  text-align: center;
+}
+#range{
+  text-align: left;
+  margin-left: 4%;
+}
+
+hr {
+margin-top:0;
+}
+.admin .row{
+  padding-bottom: 0;
+}
+.rangerow{
+  border: 1px solid red;
+  text-align: end;
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap ;
+  justify-content: space-around;
+}
+.info{
+  color: #0b2e13;
+  font-family: inherit;
+  font-size: 22px;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  padding-top: 15px;
 }

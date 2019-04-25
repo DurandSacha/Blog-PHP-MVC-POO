@@ -33,8 +33,8 @@ $this->title = "Acceuil";
                         <a href="#contact">Contact</a>
                     </li>
 
-                    <li class="page-scroll">
-                        <a href="../public/index.php?route=blog">Blog</a>
+                    <li class="push page-scroll" >
+                        <a href="../public/index.php?route=blog" class="btn btn-success btn-lg" >Blog</a>
                     </li>
                 </ul>
             </div>
@@ -228,19 +228,25 @@ $this->title = "Acceuil";
                         <?php
                         if(isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
                             ?>
-                            <a href="index.php?route=adminarticle">Le back-office</a> <br/><br/>
-                            <a href="index.php?route=deconnexion"> Se déconnecter</a>
+                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg" >Le back-office</a> <br/><br/>
+                            <a href="index.php?route=deconnexion" class="btn btn-success btn-lg"> Se déconnecter</a>
 
                         <?php }
                         else{
                             ?>
-                        <p> Connectez vous
-                            <br>
-                            <a href="index.php?route=connect"> ici</a></p>
 
-                        <p> Inscrivez vous <br/>
-                            <a href="index.php?route=register"> ici</a>
+
+
+                            <br>
+                            <a href="index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p><br>
+
+                        <p class="small"> Pas encore inscrit ? <br/>
+                            <a href="index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
                         </p>
+
+
+
+
                         <?php
                         }?>
                     </div>
@@ -297,18 +303,20 @@ $this->title = "Acceuil";
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Chalet & Caviar</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>Chalets et Caviar est un site immobilier qui sert de vitrine pour les chalets de luxe a courchevel.
+                                <br/> Ce site web est construit avec la technologie wordpress. Le theme de ce site est un theme entierement personnalisé.
+                                <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
+                                </p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Technologie:
+                                    <strong><a href="http://wordpress.com">Wordpress / PHP </a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="http://startbootstrap.com">2018</a>
                                     </strong>
                                 </li>
                                 <li>Service:
@@ -323,6 +331,7 @@ $this->title = "Acceuil";
             </div>
         </div>
     </div>
+
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -335,18 +344,18 @@ $this->title = "Acceuil";
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Festival en plein Air </h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p> Un site de festival en plein Air au parc monceau a paris du 5 au 8 Aout.
+                            2 films sont projeté par soir : Le site web sert d'affiche pour les films, et dispose d'un systeme de reservation complete.
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>technologie:
+                                    <strong><a href="http://startbootstrap.com">Wordpress PHP</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="http://startbootstrap.com">janvier 2019</a>
                                     </strong>
                                 </li>
                                 <li>Service:
@@ -373,18 +382,18 @@ $this->title = "Acceuil";
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>ExpressFood</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p> ExpressFood est une entreprise qui livre des plats de qualité a domicile grace a un réseau de livreurs a vélo. L'application web
+                            concu dispose de toute les fonctionnalitées de stockage et de livraisons des plats.
                             <ul class="list-inline item-details">
                                 <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    <strong><a href="http://startbootstrap.com">PHP/SQL</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="http://startbootstrap.com">2019</a>
                                     </strong>
                                 </li>
                                 <li>Service:
@@ -411,18 +420,18 @@ $this->title = "Acceuil";
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Blog PHP</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p> Un blog PHP concu en architecture MVC et orienté objet. Cet projet a permis la construction de réel back-office complet. Ainsi
+                            que d'un systeme d'authentification et de commentaire</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    <strong><a href="http://startbootstrap.com">PHP</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="http://startbootstrap.com">April 2019</a>
                                     </strong>
                                 </li>
                                 <li>Service:
@@ -449,14 +458,13 @@ $this->title = "Acceuil";
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>The ToDo List</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p> Un projet de TodoList qui a de nombreuses fonctionnalitée. Découverte de symfony avec ce projet</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    <strong><a href="http://startbootstrap.com">PHP / Symfony</a>
                                     </strong>
                                 </li>
                                 <li>Date:
@@ -487,18 +495,17 @@ $this->title = "Acceuil";
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>SnowTricks</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>.
-                                On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p> Un site communautaire exposant les figure de snoxboard, exécuté avec le framework symfony</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    <strong><a href="http://startbootstrap.com">Symfony</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="http://startbootstrap.com">April 2019</a>
                                     </strong>
                                 </li>
                                 <li>Service:

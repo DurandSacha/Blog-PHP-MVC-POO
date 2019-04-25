@@ -1,55 +1,35 @@
 <?php
 $this->title = "Modifier un article";
-?>
-<?php
 include '../templates/inc/baseAdmin.php';
 ?>
+    <br/>
+    <br/>
+    <section class="row">
+        <div class="box col-xs-8 col-sm-6 col-md-12"> <!-- modifier un article -->
 
-<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
+            <form method="POST" action="../public/index.php?route=majArticle">
+                <h4> Modification du titre  </h4>
+                <input type="text" class="form-control" value="<?php echo htmlspecialchars($blogpost->getTitle());?>" name="title">
+                <input type="number"  class="none" value="<?php echo htmlspecialchars($blogpost->getId());?>" name="id">
 
-<h1>Mon blog</h1>
-<div>
+                <h4> Modification du contenu  </h4>
 
-    <form method="post" action="../public/index.php?route=editArticle">      <!-- ?route=rmArticle -->
+                <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+                <script>tinymce.init({ selector:'textarea' });</script>
 
-        <p>
-        <?php
-        /*
-        echo 'test';
-        var_dump($post);
-        */
-        ?>
-        <br/>
-        <br/>
-        <br/>
-       <label for="article">Quel article voulez vous Modifier ?</label><br />
-       <select name="id">
-            <?php
-            foreach ($articles as $article)
-            {
-            ?>
-                <option value="<?= htmlspecialchars($article->getId());?>" name="option"> 
-                <?= htmlspecialchars($article->getTitle());?></option>
-                
-            <?php
-            }
-            ?>
-       </select>
-   </p>
-        <input type="submit" value="Envoyer" id="submit" name="submit">
-    </form>
+                <textarea name ="content">
+
+                   <?php echo htmlspecialchars($blogpost->getContent());?>
+
+                </textarea>
+
+                <br/>
+                <h4> Modification de l'auteur </h4>
+                <input type="text" class="form-control"value="<?php echo htmlspecialchars($blogpost->getAuthor());?>" name="author"><br/><br/>
+
+                <input type="submit" value="Modifier l'article" id="submit" name="submit" class="btn btn-success btn-lg">
+            </form>
 
 
-    <textarea id="tinymce">
-        <?php
-        //echo $_POST['content'];
-        echo htmlspecialchars($article->getContent());
-        htmlspecialchars($article->getContent());
-        ?>
-    </textarea>
-
-
-
-    <a href="../public/index.php">Retour à l'accueil</a>
-</div>
+        </div>
+    </section>

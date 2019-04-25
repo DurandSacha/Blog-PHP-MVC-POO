@@ -21,31 +21,35 @@ class ConnexionController
 
     public function connect($post)
     {
+        //$password = password_hash($_POST['password'],PASSWORD_BCRYPT);
+        //$hash = '$2y$07$BCryptRequires22Chrcte/VlQH0piJtjXl.0t1XkA8pw9dMXTpOq';
+        //if (password_verify('rasmuslerdorf', $hash)) {}
+
         if (isset($_POST['email']) && ($_POST['password'])) {
 
-            //verifier que le membre existe
-            //$password = password_hash($_POST['password'],PASSWORD_BCRYPT);
-
-
             $hash = $this->userDAO->getHash($_POST['email']);
+            if (password_verify($_POST['password'], $hash[0])) {
 
-            $result = $this->userDAO->verificationBDD($_POST['email'],$hash[0]);
-            if ($result == true) {
+                $result = $this->userDAO->verificationBDD($_POST['email'], $hash[0]);
+                if ($result == true) {
 
-                $role = $this->userDAO->verifyRole($_POST['email']);
-                if($role[0] == 'administrator'){
-                    $_SESSION['user'] = 'admin' ;
+                    $role = $this->userDAO->verifyRole($_POST['email']);
+                    if ($role[0] == 'administrator') {
+                        $_SESSION['user'] = 'admin';
 
 
+                        $this->view->render('admin/back-office', [
+                        ]);
+                    } else if ($role[0] == 'member') {
+                        $_SESSION['user'] = 'membre';
 
-                    $this->view->render('admin/back-office', [
-                    ]);
+                        header('Location: ../public/index.php');
+                    }
                 }
-                else if($role[0] == 'member'){
-                    $_SESSION['user'] = 'membre' ;
+                // prise du nom
+                $username = $this->userDAO->getName($_POST['email']);
+                $_SESSION['name'] = $username;
 
-                    header('Location: ../public/index.php');
-                }
             }
             else{
                 $this->view->render('connect', [
