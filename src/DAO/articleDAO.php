@@ -51,6 +51,21 @@ class ArticleDAO extends DAO
 
     }
 
+    public function articleCount()
+    {
+        $sql = 'SELECT * FROM article';
+        $result = $this->sql($sql);
+
+        $article = [];
+        $x = 0;
+        foreach ($result as $row) {
+            $articleId = $row['id'];
+            $article[$articleId] = $this->buildObject($row);
+            $x = $x + 1 ;
+        }
+        return $x;
+    }
+
     // hydratation 
     private function buildObject(array $row)
     {

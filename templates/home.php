@@ -226,26 +226,38 @@ $this->title = "Acceuil";
                     <div class="footer-col col-md-4">
                         <h3>Member Space</h3>
                         <?php
-                        if(isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
+                        if(isset($_SESSION['user']) and isset($_SESSION['name'] )){
+                             echo 'bonjour' . ' ' . $_SESSION['name'] . ' [' . $_SESSION['user'] . '] <br/><br/>';
+                        }
+
+                        if(isset($_SESSION['user'])) {
+
+                            if($_SESSION['user'] == 'admin') {
                             ?>
-                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg" >Le back-office</a> <br/><br/>
+                                <a href="index.php?route=adminarticle" class="btn btn-success btn-lg">Le back-office</a>
+                                <br/><br/>
+
+
+                            <?php
+                            }
+                            if($_SESSION['user'] == 'membre') {
+
+                                    ?>
+                                            <a href="index.php?route=requestUser&id=<?php echo $_SESSION['id'];?>">
+                                                Demande d'administration</a> <br/><br/>
+                            <?php }  ?>
+
                             <a href="index.php?route=deconnexion" class="btn btn-success btn-lg"> Se déconnecter</a>
 
-                        <?php }
-                        else{
-                            ?>
+                        <?php
+                        }
+                        else{ ?>
+                                <br>
+                                <a href="index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p><br>
 
-
-
-                            <br>
-                            <a href="index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p><br>
-
-                        <p class="small"> Pas encore inscrit ? <br/>
-                            <a href="index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
-                        </p>
-
-
-
+                                <p class="small"> Pas encore inscrit ? <br/>
+                                <a href="index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
+                                </p>
 
                         <?php
                         }?>
@@ -287,6 +299,19 @@ $this->title = "Acceuil";
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13,7 +13,6 @@ class Comment
     private $dateAdded;
 
     private $status;
-
     
     public function getId()
     {

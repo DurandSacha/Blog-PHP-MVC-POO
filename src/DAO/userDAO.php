@@ -6,6 +6,44 @@ use App\src\model\User;
 
 class UserDAO extends DAO
 {
+
+    public function getUser($email){
+        $sql = 'SELECT * FROM user WHERE email = ?';
+        $result = $this->sql($sql, [$email]);
+        $author = [];
+        foreach ($result as $row) {
+            $authorId = $row['id'];
+            $author[$authorId] = $this->buildObject($row);
+        }
+        return $author;
+    }
+
+    public function getName($email){
+        $sql = 'SELECT username FROM user WHERE email = ?';
+        $result = $this->sql($sql,[$email]);
+        $username = $result->fetch();
+        return $username[0];
+    }
+    public function getUserId($email){
+        $sql = 'SELECT id FROM user WHERE email = ?';
+        $result = $this->sql($sql,[$email]);
+        $id = $result->fetch();
+        return $id[0];
+
+    }
+
+
+    public function getPrivilege(){
+        $sql = 'SELECT * FROM user WHERE privilege = ?';
+        $result = $this->sql($sql, ['en attente']);
+        $privileges = [];
+        foreach ($result as $row) {
+            $userId = $row['id'];
+            $privileges[$userId] = $this->buildObject($row);
+        }
+        return $privileges;
+    }
+
     public function verificationBDD($login,$password)
     {
         $sql = 'SELECT * FROM user WHERE email = ? AND password = ?';
@@ -19,12 +57,7 @@ class UserDAO extends DAO
         $role = $result->fetch();
         return $role;
     }
-    public function getName($email){
-        $sql = 'SELECT username FROM user WHERE email = ?';
-        $result = $this->sql($sql,[$email]);
-        $username = $result->fetch();
-        return $username;
-    }
+
     public function getHash($email){
         $sql = 'SELECT password FROM user WHERE email = ?';
         $result = $this->sql($sql,[$email]);
@@ -38,7 +71,70 @@ class UserDAO extends DAO
         return;
         }
 
-    // hydratation
+    public function getAuthor(){
+        $sql = 'SELECT * FROM user WHERE role = ?';
+        $result = $this->sql($sql, ['administrator']);
+        $author = [];
+        foreach ($result as $row) {
+            $authorId = $row['id'];
+            $author[$authorId] = $this->buildObject($row);
+        }
+        return $author;
+    }
+
+
+    public function declineUser($id)
+    {
+        // update privilege a éxécuté
+
+        $sql = 'UPDATE user SET privilege = ? WHERE id = ?';
+        $this->sql($sql, ['éxécuté', $id]);
+    }
+    public function acceptUser($id)
+    {
+        $sql = 'UPDATE user SET privilege = ? WHERE id = ?';
+        $this->sql($sql, ['éxécuté', $id]);
+        // set status a admin
+        $sql = 'UPDATE user SET role = ? WHERE id = ?';
+        $this->sql($sql, ['administrator', $id]);
+    }
+
+    public function requestUser($id)
+    {
+        $sql = 'UPDATE user SET privilege = ? WHERE id = ?';
+        $this->sql($sql, ['en attente', $id]);
+    }
+
+    public function adminCount()
+    {
+        $sql = 'SELECT * FROM user WHERE role = ?';
+        $result = $this->sql($sql,['administrator']);
+
+        $admin = [];
+        $x = 0;
+        foreach ($result as $row) {
+            $adminId = $row['id'];
+            $admin[$adminId] = $this->buildObject($row);
+            $x = $x + 1 ;
+        }
+        return $x;
+    }
+
+    public function adminWaitCount()
+    {
+        $sql = 'SELECT * FROM user WHERE role = ? AND privilege = ?';
+        $result = $this->sql($sql,['member','en attente']);
+
+        $adminWait = [];
+        $x = 0;
+        foreach ($result as $row) {
+            $adminWaitId = $row['id'];
+            $adminWait[$adminWaitId] = $this->buildObject($row);
+            $x = $x + 1 ;
+        }
+        return $x;
+    }
+
     private function buildObject(array $row)
     {
         $user = new User();
@@ -47,6 +143,7 @@ class UserDAO extends DAO
         $user->setEmail($row['email']);
         $user->setPassword($row['password']);
         $user->setRole($row['role']);
+        $user->setPrivilege($row['privilege']);
         return $user;
     }
 }

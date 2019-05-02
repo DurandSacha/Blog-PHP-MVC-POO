@@ -70,39 +70,54 @@ foreach ($articles as $article)
 
 
 <!-- Footer -->
-
 <footer class="text-center">
     <div class="footer-above">
         <div class="container">
             <div class="row">
                 <div class="footer-col col-md-4">
                     <h3>Member Space</h3>
+                    <?php
+                    if(isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
+                        ?>
+                        <?php
+                        if(isset($_SESSION['user']) == 'admin') {
+                            ?>
+                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg" >Le back-office</a> <br/><br/>
+                        <?php }
+                        ?>
+
+                        <a href="index.php?route=deconnexion" class="btn btn-success btn-lg"> Se déconnecter</a>
+
+                    <?php }
+                    else{
+                        ?>
 
 
-                        <a href="index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p>
 
-                    <p> Inscrivez vous <br/>
-                        <a href="index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
-                    </p>
+                        <br>
+                        <a href="index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p><br>
+
+                        <p class="small"> Pas encore inscrit ? <br/>
+                            <a href="index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
+                        </p>
+
+
+
+
+                        <?php
+                    }?>
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Around the Web</h3>
                     <ul class="list-inline">
                         <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            <a href="https://github.com/DurandSacha/" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                         </li>
                         <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/in/sacha-durand-687032150" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                         </li>
                         <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                        </li>
+
                     </ul>
                 </div>
                 <div class="footer-col col-md-4">

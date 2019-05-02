@@ -4,26 +4,26 @@ namespace App\src\controller;
 
 use App\src\DAO\UserDAO;
 use App\src\model\View;
-use App\src\model\User;
+use App\src\DAO\CommentDAO;
 use App\src\DAO\ArticleDAO;
 
 class ConnexionController
 {
     private $view;
-    private $user;
+    private $userDAO;
+    private $commentDAO;
     private $articleDAO;
 
     public function __construct()
     {
         $this->view = new View();
         $this->userDAO = new UserDAO();
+        $this->commentDAO = new CommentDAO();
+        $this->articleDAO = new ArticleDAO();
     }
 
     public function connect($post)
     {
-        //$password = password_hash($_POST['password'],PASSWORD_BCRYPT);
-        //$hash = '$2y$07$BCryptRequires22Chrcte/VlQH0piJtjXl.0t1XkA8pw9dMXTpOq';
-        //if (password_verify('rasmuslerdorf', $hash)) {}
 
         if (isset($_POST['email']) && ($_POST['password'])) {
 
@@ -35,25 +35,43 @@ class ConnexionController
 
                     $role = $this->userDAO->verifyRole($_POST['email']);
                     if ($role[0] == 'administrator') {
+                        unset($_SESSION['user']);
                         $_SESSION['user'] = 'admin';
 
 
+                        $nbComments = $this->commentDAO->commentCount();
+                        $nbArticles = $this->articleDAO->articleCount();
+                        $nbAdmin = $this->userDAO->adminCount();
+                        $nbAdminWait = $this->userDAO->adminWaitCount();
+
                         $this->view->render('admin/back-office', [
+                            'nbComments' => $nbComments,
+                            'nbArticles' => $nbArticles,
+                            'nbAdmin' => $nbAdmin,
+                            'nbAdminWait' => $nbAdminWait
                         ]);
+
+
                     } else if ($role[0] == 'member') {
+                        unset($_SESSION['user']);
                         $_SESSION['user'] = 'membre';
 
-                        header('Location: ../public/index.php');
+                        $this->view->render('home', [
+                        ]);
                     }
                 }
-                // prise du nom
+
                 $username = $this->userDAO->getName($_POST['email']);
                 $_SESSION['name'] = $username;
+
+                $id = $this->userDAO->getUserId($_POST['email']);
+                $_SESSION['id'] = $id;
+
 
             }
             else{
                 $this->view->render('connect', [
-                  // envoyer message erreur
+
                 ]);
             }
         }
@@ -83,6 +101,9 @@ class ConnexionController
     {
 
         unset($_SESSION['user']);
+        unset($_SESSION['name']);
+        unset($_SESSION['id']);
+        session_destroy();
         $this->view->render('home', [
         ]);
     }

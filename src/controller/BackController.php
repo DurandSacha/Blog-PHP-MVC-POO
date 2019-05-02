@@ -5,6 +5,7 @@ namespace App\src\controller;
 use App\src\DAO\ArticleDAO;
 use App\src\model\View;
 use App\src\DAO\CommentDAO;
+use App\src\DAO\UserDAO;
 
 
 class BackController
@@ -12,12 +13,14 @@ class BackController
     private $view;
     private $articleDAO;
     private $commentDAO;
+    private $userDAO;
 
     public function __construct()
     {
         $this->articleDAO = new ArticleDAO();
         $this->view = new View();
         $this->commentDAO = new CommentDAO();
+        $this->userDAO = new UserDAO();
     }
 
 
@@ -40,8 +43,10 @@ class BackController
         if (isset($_SESSION['user']) == 'admin') {
             if (isset($_GET['id'])){
                 $blogpost = $this->articleDAO->getArticle($_GET['id']);
+                $authors = $this->userDAO->getAuthor();
                 $this->view->render('admin/editArticle', [
-                    'blogpost' => $blogpost
+                    'blogpost' => $blogpost,
+                    'authors' => $authors
                 ]);
             }
             else{
@@ -91,28 +96,29 @@ class BackController
         }
     }
 
-    public function declineComment($get)
+    public function declineComment($id)
     {
         if (isset($_SESSION['user']) == 'admin') {
 
+
+            $this->commentDAO->declineComment($id);
             $comments = $this->commentDAO->getCommentsWaiting();
-            $this->commentDAO->declineComment($get);
             $this->view->render('admin/adminCommentWait', [
                 'comments' => $comments,
             ]);
 
         }
     }
-    public function acceptComment($get)
+    public function acceptComment($id)
     {
         if (isset($_SESSION['user']) == 'admin') {
+
+            $this->commentDAO->acceptComment($id);
             $comments = $this->commentDAO->getCommentsWaiting();
-            $this->commentDAO->acceptComment($get);
             $this->view->render('admin/adminCommentWait', [
                 'comments' => $comments,
             ]);
         }
-
     }
     public function addComment($post)
     {
@@ -138,24 +144,53 @@ class BackController
     public function adminDroit()
     {
         if (isset($_SESSION['user']) == 'admin') {
+
+            $privileges = $this->userDAO->getPrivilege();
+
             $this->view->render('admin/adminDroit', [
+                'privileges' => $privileges,
             ]);
         }
     }
 
-    public function adminProjet()
+    public function declineUser($id)
     {
         if (isset($_SESSION['user']) == 'admin') {
-            $this->view->render('admin/adminProjet', [
+            $this->userDAO->declineUser($id);
+            $privileges = $this->userDAO->getPrivilege();
+            $this->view->render('admin/adminDroit', [
+                'privileges' => $privileges,
             ]);
         }
     }
+
+    public function acceptUser($id)
+    {
+        if (isset($_SESSION['user']) == 'admin') {
+            $this->userDAO->acceptUser($id);
+            $privileges = $this->userDAO->getPrivilege();
+            $this->view->render('admin/adminDroit', [
+                'privileges' => $privileges,
+            ]);
+
+        }
+    }
+    public function requestUser($id)
+    {
+        if (isset($_SESSION['user']) == 'admin') {
+            $this->userDAO->requestUser($id);
+
+            $this->view->render('home', [
+            ]);
+        }
+    }
+
 
     public function addArticle($post)
     {
         if (isset($_SESSION['user']) == 'admin') {
-            $articles = $this->articleDAO->getArticles();
 
+            $articles = $this->articleDAO->getArticles();
             if (isset($post['submit'])) {
                 $articleDAO = new ArticleDAO();
                 $articleDAO->addArticle($post);
@@ -164,8 +199,11 @@ class BackController
                     'articles' => $articles,
                 ]);
             }
+
+            $authors = $this->userDAO->getAuthor();
             $this->view->render('admin/add_article', [
-                'post' => $post
+                'post' => $post,
+                'authors' => $authors
             ]);
         }
     }
@@ -194,8 +232,16 @@ class BackController
     }
 
     public function backOffice(){
-        $this->view->render('admin/back-office', [
+        $nbComments = $this->commentDAO->commentCount();
+        $nbArticles = $this->articleDAO->articleCount();
+        $nbAdmin = $this->userDAO->adminCount();
+        $nbAdminWait = $this->userDAO->adminWaitCount();
 
+        $this->view->render('admin/back-office', [
+            'nbComments' => $nbComments,
+            'nbArticles' => $nbArticles,
+            'nbAdmin' => $nbAdmin,
+            'nbAdminWait' => $nbAdminWait
         ]);
     }
 

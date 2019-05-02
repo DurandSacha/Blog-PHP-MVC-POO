@@ -18,18 +18,45 @@ include '../templates/inc/baseAdmin.php';
                     <p>n°<?php echo htmlspecialchars($article->getId());?>. <?php echo htmlspecialchars($article->getTitle());?></p>
                 </div>
                 <div class="col-lg-2">
-                    <a href="index.php?route=editArticle&id=<?php echo htmlspecialchars($article->getId());?>" class="btn btn-success btn-md"> Update</a>
+                    <a href="index.php?route=editArticle&id=<?php echo htmlspecialchars($article->getId());?>" 
+                    class="btn btn-success btn-md"> Update</a>
                 </div>
                 <div class="col-lg-2">
-                    <a href="index.php?route=rmArticle&id=<?php echo htmlspecialchars($article->getId());?>" class="btn btn-success btn-md"> Delete</a>
+                    <a href="#comfirmDelete"  data-toggle="modal"
+                    class="red btn btn-success btn-md"> Delete</a>
                 </div>
 
+                <!-- <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> Ligne d'activation -->
+                <!-- lien de la requete suppression : "index.php?route=rmArticle&id=< ?php echo htmlspecialchars($article->getId());?>" -->
             </div>
         </div>
-
+        <!-- essai boite de dialogue suppression -->
+        <div class="portfolio-modal modal fade" id="comfirmDelete" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <p> Voulez vous vraiment supprimer cet article ? </p>
+                                <a href="index.php?route=rmArticle&id=<?php echo htmlspecialchars($article->getId());?>"
+                                type="button" class="btn btn-default" ><i class="fa fa-times"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php
     }
     ?>
+
+
 
 <br/>
 <br/>

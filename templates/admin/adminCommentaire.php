@@ -15,7 +15,7 @@ include '../templates/inc/baseAdmin.php';
     <div id="range">
         <br/><hr/>
         <div class="col-lg-4">
-            <p>n°<?php echo htmlspecialchars($comment->getId());?>. <?php echo htmlspecialchars($comment->getPseudo());?>
+            <p>Article n°<?php echo htmlspecialchars($comment->getArticle_id());?> / <?php echo htmlspecialchars($comment->getPseudo());?>
                 / <?php echo htmlspecialchars($comment->getDateAdded());?>
             </p>
         </div>
@@ -23,9 +23,8 @@ include '../templates/inc/baseAdmin.php';
             <a  class="btn btn-success btn-md"> <?php echo htmlspecialchars($comment->getStatus());?></a>
         </div>
 
-
         <div class="col-lg-3">
-            <p><?php echo htmlspecialchars($comment->getContent());?></p>
+            <p><?php echo html_entity_decode(htmlspecialchars($comment->getContent()));?></p>
         </div>
 
     </div>

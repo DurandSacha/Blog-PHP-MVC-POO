@@ -14,6 +14,8 @@ class User
 
     private $role;
 
+    private $privilege;
+
 
     public function getId()
     {
@@ -58,6 +60,17 @@ class User
     {
         $this->password = $password;
     }
+
+    public function getPrivilege()
+    {
+        return $this->privilege;
+    }
+
+    public function setPrivilege($privilege)
+    {
+        $this->role = $privilege;
+    }
+
 
     public function getRole()
     {
