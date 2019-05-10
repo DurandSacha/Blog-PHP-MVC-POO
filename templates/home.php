@@ -69,7 +69,7 @@ $this->title = "Acceuil";
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-lg-4 col-sm-12 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -79,7 +79,7 @@ $this->title = "Acceuil";
                         <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-lg-4 col-sm-12 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -89,7 +89,7 @@ $this->title = "Acceuil";
                         <img src="img/portfolio/cake.png" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-lg-4 col-sm-12 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -99,7 +99,7 @@ $this->title = "Acceuil";
                         <img src="img/portfolio/circus.png" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-lg-4 col-sm-12 portfolio-item">
                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -109,7 +109,7 @@ $this->title = "Acceuil";
                         <img src="img/portfolio/game.png" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-lg-4 col-sm-12 portfolio-item">
                     <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -119,7 +119,7 @@ $this->title = "Acceuil";
                         <img src="img/portfolio/safe.png" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-lg-4 col-sm-12 portfolio-item">
                     <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -226,24 +226,26 @@ $this->title = "Acceuil";
                     <div class="footer-col col-md-4">
                         <h3>Member Space</h3>
                         <?php
-                        if(isset($_SESSION['user']) and isset($_SESSION['name'] )){
-                             echo 'bonjour' . ' ' . $_SESSION['name'] . ' [' . $_SESSION['user'] . '] <br/><br/>';
-                        }
 
                         if(isset($_SESSION['user'])) {
 
-                            if($_SESSION['user'] == 'admin') {
+                            echo 'bonjour' . ' ' . $_SESSION['user']['name'] . '<br/><br/>';
+
+                            if($_SESSION['user']['role'] == 'admin') {
                             ?>
                                 <a href="index.php?route=adminarticle" class="btn btn-success btn-lg">Le back-office</a>
                                 <br/><br/>
+                                <?php
+                                var_dump($_SESSION['user']['role']);
+                                ?>
 
 
                             <?php
                             }
-                            if($_SESSION['user'] == 'membre') {
+                            if($_SESSION['user']['role'] == 'membre') {
 
                                     ?>
-                                            <a href="index.php?route=requestUser&id=<?php echo $_SESSION['id'];?>">
+                                            <a href="index.php?route=requestUser&id=<?php echo $_SESSION['user']['id'];?>">
                                                 Demande d'administration</a> <br/><br/>
                             <?php }  ?>
 

@@ -8,11 +8,11 @@ class Article
 
     private $title;
     
-    private $content;
+    private $art_content;
     
-    private $author;
+    private $user_id;
     
-    private $date_added;
+    private $art_date_added;
 
     
     public function getId()
@@ -38,33 +38,33 @@ class Article
         $this->title = $title;
     }
 
-    public function setContent($content)
+    public function setContent($art_content)
     {
-        $this->content = $content;
+        $this->art_content = $art_content;
     }
 
     public function getContent()
     {
-        return $this->content;
+        return $this->art_content;
     }
 
-    public function getAuthor()
+    public function getUser_id()
     {
-        return $this->author;
+        return $this->user_id;
     }
 
-    public function setAuthor($author)
+    public function setUser_id($user_id)
     {
-        $this->author = $author;
+        $this->user_id = $user_id;
     }
 
     public function getDateAdded()
     {
-        return $this->date_added;
+        return $this->art_date_added;
     }
 
-    public function setDateAdded($date_added)
+    public function setDateAdded($art_date_added)
     {
-        $this->date_added = $date_added;
+        $this->art_date_added = $art_date_added;
     }
 }

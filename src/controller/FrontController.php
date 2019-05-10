@@ -21,9 +21,9 @@ class FrontController
 
     public function home()
     {
-        $articles = $this->articleDAO->getArticles();
+        //$articles = $this->articleDAO->getArticles();
         $this->view->render('home', [
-            'articles' => $articles
+            //'articles' => $articles
         ]);
     }
     public function blog()

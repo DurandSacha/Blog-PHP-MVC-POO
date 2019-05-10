@@ -27,7 +27,7 @@ include '../templates/inc/baseAdmin.php';
                 <h4> Modification de l'auteur </h4>
                 <select name="author">
                 <?php
-                foreach ($authors as $author) {   //echo htmlspecialchars($blogpost->getAuthor());
+                foreach ($authors as $author) {
                 ?>
                     <option value="<?php echo htmlspecialchars($author->getUsername());?>" name="author" id="author" class="form-control"
                     > <?php echo htmlspecialchars($author->getUsername());?>

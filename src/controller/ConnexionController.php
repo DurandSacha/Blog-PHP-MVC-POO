@@ -35,8 +35,8 @@ class ConnexionController
 
                     $role = $this->userDAO->verifyRole($_POST['email']);
                     if ($role[0] == 'administrator') {
-                        unset($_SESSION['user']);
-                        $_SESSION['user'] = 'admin';
+
+                        $sessionRole = 'admin';
 
 
                         $nbComments = $this->commentDAO->commentCount();
@@ -53,8 +53,9 @@ class ConnexionController
 
 
                     } else if ($role[0] == 'member') {
-                        unset($_SESSION['user']);
-                        $_SESSION['user'] = 'membre';
+
+                        $sessionRole = "membre";
+
 
                         $this->view->render('home', [
                         ]);
@@ -62,11 +63,10 @@ class ConnexionController
                 }
 
                 $username = $this->userDAO->getName($_POST['email']);
-                $_SESSION['name'] = $username;
-
                 $id = $this->userDAO->getUserId($_POST['email']);
-                $_SESSION['id'] = $id;
 
+                unset($_SESSION['user']);
+                $_SESSION['user'] = ['role' => $sessionRole, 'name' => $username,'id' => $id];
 
             }
             else{
@@ -100,10 +100,9 @@ class ConnexionController
     public function deconnect()
     {
 
-        unset($_SESSION['user']);
-        unset($_SESSION['name']);
-        unset($_SESSION['id']);
         session_destroy();
+        unset($_SESSION['user']);
+
         $this->view->render('home', [
         ]);
     }

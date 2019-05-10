@@ -8,7 +8,15 @@ class ArticleDAO extends DAO
 {
     public function getArticles()
     {
-        $sql = 'SELECT id, title, content, author, date_added FROM article ORDER BY id DESC';
+        $sql = 'SELECT id, title, art_content, user_id, art_date_added FROM article ORDER BY id DESC';
+        // jointure sur table article , champs user_id
+        // recuperer "username" de la table "user"
+        /*
+         $sql = 'SELECT article.id, title, content, username, date_added
+                FROM article
+                INNER JOIN user
+                ORDER BY id DESC';
+        */
         $result = $this->sql($sql);
         $articles = [];
         foreach ($result as $row) {
@@ -20,7 +28,7 @@ class ArticleDAO extends DAO
 
     public function getArticle($idArt)
     {
-        $sql = 'SELECT id, title, content, author, date_added FROM article WHERE id = ?';
+        $sql = 'SELECT id, title, art_content, user_id, art_date_added FROM article WHERE id = ?';
         $result = $this->sql($sql, [$idArt]);
         $row = $result->fetch();
         if($row) {
@@ -34,8 +42,8 @@ class ArticleDAO extends DAO
         //Permet de récupérer les variables $title, $content et $author
         extract($article);
 
-        $sql = 'INSERT INTO article (title, content, author, date_added) VALUES (?, ?, ?, NOW())';
-        $this->sql($sql, [$title, $content, $author]);
+        $sql = 'INSERT INTO article (title, art_content, user_id, art_date_added) VALUES (?, ?, ?, NOW())';
+        $this->sql($sql, [$title, $content, $_SESSION['user']['id'] /*$author*/]);
     }
 
     public function rmArticle($id)
@@ -46,8 +54,8 @@ class ArticleDAO extends DAO
 
     public function updatePost($title,$content,$author,$id)
     {
-        $sql = 'UPDATE article SET title= ?, content= ?, author = ?, date_added = NOW() WHERE id=?;';
-        $this->sql($sql,[$title, $content, $author, $id]);
+        $sql = 'UPDATE article SET title= ?, art_content= ?, user_id = ?, art_date_added = NOW() WHERE id=?;';
+        $this->sql($sql,[$title, $content, $_SESSION['user']['id'], $id]);
 
     }
 
@@ -72,9 +80,9 @@ class ArticleDAO extends DAO
         $article = new Article();
         $article->setId($row['id']);
         $article->setTitle($row['title']);
-        $article->setContent($row['content']);
-        $article->setDateAdded($row['date_added']);
-        $article->setAuthor($row['author']);
+        $article->setContent($row['art_content']);
+        $article->setDateAdded($row['art_date_added']);
+        $article->setUser_id($row['user_id']);
         return $article;
     }
 }

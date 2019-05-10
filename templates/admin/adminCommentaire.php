@@ -6,7 +6,7 @@ include '../templates/inc/baseAdmin.php';
 <br/>
 <div class="container admin">
     <h2> Derniers Commentaires</h2><br/>
-    <a href="index.php?route=admincommentaireWait" class="btn btn-success btn-md"> Voir les commentaires en attentes</a><br/><br/>
+    <a href="index.php?route=admincommentaireWait" class="btn btn-success btn-md"> commentaires en attentes</a><br/><br/>
     <?php
     foreach ($comments as $comment)
     {   /*htmlspecialchars($article->getId());*/

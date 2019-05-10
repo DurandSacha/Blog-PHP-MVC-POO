@@ -38,28 +38,17 @@ include '../templates/inc/baseAdmin.php';
             </div>
 
             <!-- essai boite de dialogue suppression -->
-            <div class="portfolio-modal modal fade" id="comfirmDelete" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
-                                <div class="modal-body">
-                                    <p> Voulez vous vraiment supprimer ce commentaire ? </p>
-                                    <a href="index.php?route=declineComment&id=<?php echo htmlspecialchars($comment->getId()); ?>"
+
+            <!--  <a href="index.php?route=declineComment&id=< ?php echo htmlspecialchars($comment->getId()); ?>"
                                        type="button" class="btn btn-default" ><i class="fa fa-times"></i> Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                       -->
+            <div class=" portfolio-modal modal fade" id="comfirmDelete" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="alert alert-danger" role="alert">
+                    <p> Etes vous sur de vouloir supprimer ce commentaire ?<br/> </p>
+                    <a href="index.php?route=declineComment&id=<?php echo htmlspecialchars($comment->getId()); ?>"
+                       type="button" class="btn btn-default" ><i class="fa fa-times"></i> Delete</a>
                 </div>
             </div>
-
 
             <?php
         }

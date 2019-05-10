@@ -35,7 +35,7 @@ class UserDAO extends DAO
 
     public function getPrivilege(){
         $sql = 'SELECT * FROM user WHERE privilege = ?';
-        $result = $this->sql($sql, ['en attente']);
+        $result = $this->sql($sql, ['In Progress']);
         $privileges = [];
         foreach ($result as $row) {
             $userId = $row['id'];
@@ -88,12 +88,12 @@ class UserDAO extends DAO
         // update privilege a éxécuté
 
         $sql = 'UPDATE user SET privilege = ? WHERE id = ?';
-        $this->sql($sql, ['éxécuté', $id]);
+        $this->sql($sql, ['Done', $id]);
     }
     public function acceptUser($id)
     {
         $sql = 'UPDATE user SET privilege = ? WHERE id = ?';
-        $this->sql($sql, ['éxécuté', $id]);
+        $this->sql($sql, ['Done', $id]);
         // set status a admin
         $sql = 'UPDATE user SET role = ? WHERE id = ?';
         $this->sql($sql, ['administrator', $id]);
@@ -102,7 +102,7 @@ class UserDAO extends DAO
     public function requestUser($id)
     {
         $sql = 'UPDATE user SET privilege = ? WHERE id = ?';
-        $this->sql($sql, ['en attente', $id]);
+        $this->sql($sql, ['In Progress', $id]);
     }
 
     public function adminCount()
@@ -123,7 +123,7 @@ class UserDAO extends DAO
     public function adminWaitCount()
     {
         $sql = 'SELECT * FROM user WHERE role = ? AND privilege = ?';
-        $result = $this->sql($sql,['member','en attente']);
+        $result = $this->sql($sql,['member','In progress']);
 
         $adminWait = [];
         $x = 0;

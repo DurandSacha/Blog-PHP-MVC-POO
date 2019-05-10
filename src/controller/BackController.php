@@ -26,21 +26,21 @@ class BackController
 
     public function adminArticle()
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
             $articles = $this->articleDAO->getArticles();
 
-            $blogpost = $this->articleDAO->getArticle(1);
+
 
             $this->view->render('admin/adminArticle', [
                 'articles' => $articles,
-                'blogpost' => $blogpost,
+
             ]);
         }
     }
 
     public function editArticle($id)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
             if (isset($_GET['id'])){
                 $blogpost = $this->articleDAO->getArticle($_GET['id']);
                 $authors = $this->userDAO->getAuthor();
@@ -58,7 +58,7 @@ class BackController
     }
     public function updatePost($post)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
 
 
             if (isset($post['submit'])) {
@@ -76,7 +76,7 @@ class BackController
 
     public function adminCommentaire()
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
 
             $comments = $this->commentDAO->getCommentsList();
             $this->view->render('admin/adminCommentaire', [
@@ -86,7 +86,7 @@ class BackController
     }
     public function adminCommentaireWaiting()
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
 
             $comments = $this->commentDAO->getCommentsWaiting();
             $this->view->render('admin/adminCommentWait', [
@@ -98,7 +98,7 @@ class BackController
 
     public function declineComment($id)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
 
 
             $this->commentDAO->declineComment($id);
@@ -111,7 +111,7 @@ class BackController
     }
     public function acceptComment($id)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
 
             $this->commentDAO->acceptComment($id);
             $comments = $this->commentDAO->getCommentsWaiting();
@@ -125,8 +125,8 @@ class BackController
         if (isset($_POST['content'])){
 
             $article_id = $_POST['id'];
-            $pseudo = $_SESSION['name'];
-            $this->commentDAO->addComment($_POST['content'], $article_id, $pseudo['username']);
+            $pseudo = $_SESSION['user']['name'];
+            $this->commentDAO->addComment($_POST['content'], $article_id, $pseudo);
 
 
         }
@@ -143,7 +143,7 @@ class BackController
 
     public function adminDroit()
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
 
             $privileges = $this->userDAO->getPrivilege();
 
@@ -155,7 +155,7 @@ class BackController
 
     public function declineUser($id)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
             $this->userDAO->declineUser($id);
             $privileges = $this->userDAO->getPrivilege();
             $this->view->render('admin/adminDroit', [
@@ -166,7 +166,7 @@ class BackController
 
     public function acceptUser($id)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
             $this->userDAO->acceptUser($id);
             $privileges = $this->userDAO->getPrivilege();
             $this->view->render('admin/adminDroit', [
@@ -177,7 +177,7 @@ class BackController
     }
     public function requestUser($id)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
             $this->userDAO->requestUser($id);
 
             $this->view->render('home', [
@@ -185,32 +185,35 @@ class BackController
         }
     }
 
-
     public function addArticle($post)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
 
-            $articles = $this->articleDAO->getArticles();
+
             if (isset($post['submit'])) {
                 $articleDAO = new ArticleDAO();
                 $articleDAO->addArticle($post);
 
+                $articles = $this->articleDAO->getArticles();
                 $this->view->render('admin/adminArticle', [
                     'articles' => $articles,
                 ]);
+
+            }
+            else {
+                $authors = $this->userDAO->getAuthor();
+                $this->view->render('admin/add_article', [
+                    'authors' => $authors
+                ]);
             }
 
-            $authors = $this->userDAO->getAuthor();
-            $this->view->render('admin/add_article', [
-                'post' => $post,
-                'authors' => $authors
-            ]);
+
         }
     }
 
     public function rmArticle($post)
     {
-        if (isset($_SESSION['user']) == 'admin') {
+        if (isset($_SESSION['user']['role']) == 'admin') {
             if (empty($_GET)) {
             } else {
                 echo $_GET['id'];
