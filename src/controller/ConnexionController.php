@@ -66,16 +66,14 @@ class ConnexionController
                 $id = $this->userDAO->getUserId($_POST['email']);
 
                 unset($_SESSION['user']);
-                $_SESSION['user'] = ['role' => $sessionRole, 'name' => $username,'id' => $id];
+                $_SESSION['user'] = ['role' => $sessionRole, 'name' => $username, 'id' => $id];
 
-            }
-            else{
+            } else {
                 $this->view->render('connect', [
 
                 ]);
             }
-        }
-        else {
+        } else {
             $this->view->render('connect', [
             ]);
         }
@@ -83,20 +81,20 @@ class ConnexionController
 
     public function register($post)
     {
-        if (isset($_POST['email']) && ($_POST['username']) && ($_POST['password'])  ) {
-            $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
-            $this->userDAO->addUser($_POST['email'],$password,$_POST['username']);
+        if (isset($_POST['email']) && ($_POST['username']) && ($_POST['password'])) {
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $this->userDAO->addUser($_POST['email'], $password, $_POST['username']);
 
             $this->view->render('home', [
             ]);
 
-        }
-        else {
+        } else {
 
             $this->view->render('register', [
             ]);
         }
     }
+
     public function deconnect()
     {
 

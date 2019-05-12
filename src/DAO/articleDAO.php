@@ -8,11 +8,7 @@ class ArticleDAO extends DAO
 {
     public function getArticles()
     {
-        /*$sql = 'SELECT id, title, art_content, user_id, art_date_added FROM article ORDER BY id DESC';*/
-        // jointure sur table article , champs user_id
-        // recuperer "username" de la table "user"
-
-         $sql = 'SELECT article.id, title, art_content, user.username, art_date_added,user_id
+        $sql = 'SELECT article.id, title, art_content, user.username, art_date_added,user_id
                 FROM article
                 INNER JOIN user
                 ORDER BY article.id DESC';
@@ -23,7 +19,7 @@ class ArticleDAO extends DAO
         foreach ($result as $row) {
             $articleId = $row['id'];
             $articles[$articleId] = $this->buildObject($row);
-            /*var_dump($articles);*/
+
         }
         return $articles;
     }
@@ -33,7 +29,7 @@ class ArticleDAO extends DAO
         $sql = 'SELECT article.id, title, art_content, username, art_date_added,user_id  FROM article  INNER JOIN user WHERE article.id = ?';
         $result = $this->sql($sql, [$idArt]);
         $row = $result->fetch();
-        if($result) {
+        if ($result) {
             return $this->buildObject($row);
         }
         echo 'Aucun article existant avec cet identifiant :(';
@@ -41,7 +37,7 @@ class ArticleDAO extends DAO
 
     public function addArticle($article)
     {
-        //Permet de récupérer les variables $title, $content et $author
+
         extract($article);
 
         $sql = 'INSERT INTO article (title, art_content, user_id, art_date_added) VALUES (?, ?, ?, NOW())';
@@ -51,13 +47,13 @@ class ArticleDAO extends DAO
     public function rmArticle($id)
     {
         $sql = 'DELETE FROM article WHERE id=?';
-        $this->sql($sql,[$id]);
+        $this->sql($sql, [$id]);
     }
 
-    public function updatePost($title,$content,$author,$id)
+    public function updatePost($title, $content, $id)
     {
         $sql = 'UPDATE article SET title= ?, art_content= ?, user_id = ?, art_date_added = NOW() WHERE id=?;';
-        $this->sql($sql,[$title, $content, $_SESSION['user']['id'], $id]);
+        $this->sql($sql, [$title, $content, $_SESSION['user']['id'], $id]);
 
     }
 
@@ -74,12 +70,11 @@ class ArticleDAO extends DAO
         foreach ($result as $row) {
             $articleId = $row['id'];
             $article[$articleId] = $this->buildObject($row);
-            $x = $x + 1 ;
+            $x = $x + 1;
         }
         return $x;
     }
 
-    // hydratation 
     private function buildObject(array $row)
     {
         $article = new Article();
@@ -92,3 +87,5 @@ class ArticleDAO extends DAO
         return $article;
     }
 }
+
+

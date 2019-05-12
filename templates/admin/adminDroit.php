@@ -15,7 +15,6 @@ $this->title ="Droit - Back-office";
     foreach ($privileges as $privilege)
     {
         ?>
-
         <div class="row">
             <div id="range">
                 <br/><hr/>
@@ -37,7 +36,6 @@ $this->title ="Droit - Back-office";
             </div>
         </div>
 
-        <!-- essai boite de dialogue suppression -->
         <div class=" portfolio-modal modal fade" id="comfirmDelete" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="alert alert-danger" role="alert">
                 <p> Voulez vous vraiment refuser la demande administrateur  ? <br/></p>
@@ -51,13 +49,8 @@ $this->title ="Droit - Back-office";
         <?php
     }
     ?>
-
     <br/>
     <br/>
-
-
-
-
     <br/>
     <br/>
     <br/>

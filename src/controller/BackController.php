@@ -30,7 +30,6 @@ class BackController
             $articles = $this->articleDAO->getArticles();
 
 
-
             $this->view->render('admin/adminArticle', [
                 'articles' => $articles,
 
@@ -41,21 +40,21 @@ class BackController
     public function editArticle($id)
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
-            if (isset($_GET['id'])){
+            if (isset($_GET['id'])) {
                 $blogpost = $this->articleDAO->getArticle($_GET['id']);
                 $authors = $this->userDAO->getAuthor();
                 $this->view->render('admin/editArticle', [
                     'blogpost' => $blogpost,
                     'authors' => $authors
                 ]);
-            }
-            else{
+            } else {
                 $this->view->render('home', [
                 ]);
             }
         }
 
     }
+
     public function updatePost($post)
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
@@ -65,7 +64,7 @@ class BackController
                 $id = $_POST['id'];
 
                 $articleDAO = new ArticleDAO();
-                $articleDAO->updatePost($_POST['title'],$_POST['content'],$_POST['author'],$id);
+                $articleDAO->updatePost($_POST['title'], $_POST['content'], $id);
             }
             $this->editArticle($id);
 
@@ -80,10 +79,11 @@ class BackController
 
             $comments = $this->commentDAO->getCommentsList();
             $this->view->render('admin/adminCommentaire', [
-               'comments' => $comments,
+                'comments' => $comments,
             ]);
         }
     }
+
     public function adminCommentaireWaiting()
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
@@ -109,6 +109,7 @@ class BackController
 
         }
     }
+
     public function acceptComment($id)
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
@@ -120,9 +121,10 @@ class BackController
             ]);
         }
     }
+
     public function addComment($post)
     {
-        if (isset($_POST['content'])){
+        if (isset($_POST['content'])) {
 
             $article_id = $_POST['id'];
             $pseudo = $_SESSION['user']['name'];
@@ -138,7 +140,6 @@ class BackController
         ]);
 
     }
-
 
 
     public function adminDroit()
@@ -175,6 +176,7 @@ class BackController
 
         }
     }
+
     public function requestUser($id)
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
@@ -198,8 +200,7 @@ class BackController
                     'articles' => $articles,
                 ]);
 
-            }
-            else {
+            } else {
                 $authors = $this->userDAO->getAuthor();
                 $this->view->render('admin/add_article', [
                     'authors' => $authors
@@ -229,7 +230,8 @@ class BackController
         }
     }
 
-    public function backOffice(){
+    public function backOffice()
+    {
         $nbComments = $this->commentDAO->commentCount();
         $nbArticles = $this->articleDAO->articleCount();
         $nbAdmin = $this->userDAO->adminCount();
@@ -240,9 +242,9 @@ class BackController
         $nbCommentDone = $this->commentDAO->commentDoneCount();
         $nbCommentDeclined = $this->commentDAO->commentDeclinedCount();
 
-        $nbCommentDonePourcent =  ($nbCommentDone * 100)/ $nbComments;
-        $nbCommentDeclinedPourcent =  ($nbCommentDeclined * 100)/ $nbComments;
-        $nbCommentWaitPourcent  =  ($nbCommentWait * 100)/ $nbComments;
+        $nbCommentDonePourcent = ($nbCommentDone * 100) / $nbComments;
+        $nbCommentDeclinedPourcent = ($nbCommentDeclined * 100) / $nbComments;
+        $nbCommentWaitPourcent = ($nbCommentWait * 100) / $nbComments;
 
         $this->view->render('admin/back-office', [
             'nbComments' => $nbComments,
@@ -257,3 +259,4 @@ class BackController
 
 
 }
+

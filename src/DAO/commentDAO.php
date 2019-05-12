@@ -9,7 +9,7 @@ class CommentDAO extends DAO
     public function getCommentsFromArticle($idArt)
     {
         $sql = 'SELECT id, pseudo, content, date_added, article_id,status FROM comment WHERE article_id = ? AND status = ? OR status = ?';
-        $result = $this->sql($sql, [$idArt, 'Accepted','declined']);
+        $result = $this->sql($sql, [$idArt, 'Accepted', 'declined']);
         $comments = [];
         foreach ($result as $row) {
             $commentId = $row['id'];
@@ -64,15 +64,16 @@ class CommentDAO extends DAO
         $this->sql($sql, ['declined', $idComment]);
     }
 
-    public function addComment($content, $article_id, $pseudo)      // (string $content, int $article_id, string $pseudo): void
+    public function addComment($content, $article_id, $pseudo)
     {
 
         $sql = 'INSERT INTO comment (pseudo, content, date_added, article_id, status) VALUES (?,?,NOW(),?,?)';
         $this->sql($sql, [$pseudo, $content, $article_id, 'waiting']);
     }
+
     public function commentCount()
     {
-        
+
         $sql = 'SELECT id, pseudo, content, date_added, article_id,status  FROM comment';
         $result = $this->sql($sql);
 
@@ -81,7 +82,7 @@ class CommentDAO extends DAO
         foreach ($result as $row) {
             $commentId = $row['id'];
             $comments[$commentId] = $this->buildObject($row);
-            $x = $x + 1 ;
+            $x = $x + 1;
         }
         return $x;
     }
@@ -97,11 +98,12 @@ class CommentDAO extends DAO
         foreach ($result as $row) {
             $commentId = $row['id'];
             $comments[$commentId] = $this->buildObject($row);
-            $x = $x + 1 ;
+            $x = $x + 1;
         }
         return $x;
 
     }
+
     public function commentDoneCount()
     {
         $sql = 'SELECT * FROM comment WHERE status = ? ';
@@ -112,10 +114,11 @@ class CommentDAO extends DAO
         foreach ($result as $row) {
             $commentId = $row['id'];
             $comments[$commentId] = $this->buildObject($row);
-            $x = $x + 1 ;
+            $x = $x + 1;
         }
         return $x;
     }
+
     public function commentDeclinedCount()
     {
         $sql = 'SELECT * FROM comment WHERE status = ? ';
@@ -126,7 +129,7 @@ class CommentDAO extends DAO
         foreach ($result as $row) {
             $commentId = $row['id'];
             $comments[$commentId] = $this->buildObject($row);
-            $x = $x + 1 ;
+            $x = $x + 1;
         }
         return $x;
     }
@@ -144,3 +147,5 @@ class CommentDAO extends DAO
         return $comment;
     }
 }
+
+

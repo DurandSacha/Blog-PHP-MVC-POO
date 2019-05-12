@@ -1,15 +1,12 @@
 {
-    "name": "pckg/blog",
-    "require": {
-        "twbs/bootstrap": "^4.3"
-
-    },
-    "authors": [
-        {
-            "name": "sacha",
-            "email": "sacha6623@gmail.com"
-        }
-    ]
-
-
+  "name": "pckg/blog",
+  "require": {
+    "twbs/bootstrap": "^4.3"
+  },
+  "authors": [
+    {
+      "name": "sacha",
+      "email": "sacha6623@gmail.com"
+    }
+  ]
 }

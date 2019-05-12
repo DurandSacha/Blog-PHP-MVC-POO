@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 10 mai 2019 à 00:35
+-- Généré le :  Dim 12 mai 2019 à 22:54
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `bdd_projet5`
 --
-CREATE DATABASE IF NOT EXISTS `bdd_projet5` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bdd_projet5`;
 
 -- --------------------------------------------------------
 
@@ -39,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_article_user1_idx` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `article`
@@ -51,7 +49,8 @@ INSERT INTO `article` (`id`, `title`, `art_content`, `art_date_added`, `user_id`
 (4, 'Festival de film : Wordpress', '<p>Comment j\'ai utiliser wordpress pour exposer un festival de film&nbsp;</p>', '2019-05-10', 1),
 (5, 'Le blog pour écrivain ', '<p>Le blog pour &eacute;crivain : &eacute;crit lui m&ecirc;me en architecture MVC a l\'aide de PHP</p>', '2019-05-10', 1),
 (6, 'Le metier d\'analyste programmeur', '<p>d&eacute;velopper en PHP, c\'est s\'occuper de la partie back-end, de l\'administration d\'un site, a l\'aide d\'algorithme</p>', '2019-05-10', 1),
-(9, 'testaaa', '<p>dddd</p>', '2019-05-10', 1);
+(11, 'Article sur le PHP', '<p>Regardons de plus pr&egrave;s la fonction PHP mail();</p>', '2019-05-11', 1),
+(13, 'Test 5 ', '<p>ddd</p>', '2019-05-11', 1);
 
 -- --------------------------------------------------------
 
@@ -65,22 +64,22 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `pseudo` varchar(45) NOT NULL,
   `content` text NOT NULL,
   `date_added` date NOT NULL,
-  `status` enum('Accepted','declined','waiting') NOT NULL,
+  `status` enum('Accepted','declined','waiting') NOT NULL DEFAULT 'waiting',
   `article_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_comment_article_idx` (`article_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `comment`
 --
 
 INSERT INTO `comment` (`id`, `pseudo`, `content`, `date_added`, `status`, `article_id`) VALUES
-(2, 'sacha', '<p>Ce contenu est tr&egrave;s interessent</p>', '2019-05-10', 'Accepted', 9),
-(3, 'sacha', '<p>J\'adore !!! Merci beaucoup</p>', '2019-05-10', 'Accepted', 9),
-(4, 'sacha', '<p>Cet article est nul !!!&nbsp;</p>', '2019-05-10', 'Accepted', 6),
+(4, 'sacha', '<p>Cet article est nul !!!&nbsp;</p>', '2019-05-10', 'waiting', 6),
 (5, 'sacha', '<p>Merci beaucoup !!!&nbsp;</p>', '2019-05-10', 'Accepted', 2),
-(6, 'sacha', '<p>Projet Tr&egrave;s interessent</p>', '2019-05-10', 'Accepted', 2);
+(6, 'sacha', '<p>Projet Tr&egrave;s interessent</p>', '2019-05-10', 'declined', 2),
+(7, 'sacha', '<p>J\'adore ce contenu !!!&nbsp;</p>', '2019-05-11', 'waiting', 3),
+(10, 'sacha', '<p>Waouuuh</p>', '2019-05-11', 'Accepted', 4);
 
 -- --------------------------------------------------------
 

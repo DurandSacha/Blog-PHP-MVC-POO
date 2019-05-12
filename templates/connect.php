@@ -2,7 +2,6 @@
 $this->title = "Connexion";
 ?>
 
-<!-- Form Section -->
 <section id="">
     <div class="container">
         <div class="row">

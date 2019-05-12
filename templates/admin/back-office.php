@@ -43,13 +43,22 @@ include '../templates/inc/baseAdmin.php';
 <div class="row back-office">
     <div class="col-lg-10 col-lg-offset-1 ">
 
-        <div class="progress-bar progress-red" role="progressbar" style="width: <?php echo $nbCommentDonePourcent . "%"; ?>"
-             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo $nbCommentDonePourcent . "%"; ?> Commentaire Accepté</div>
+        <div class="progress-bar progress-red" role="progressbar"
+             style="width: <?php echo $nbCommentDonePourcent . "%"; ?>"
+             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo $nbCommentDonePourcent . "%"; ?>
+            Commentaire Accepté
+        </div>
 
-        <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $nbCommentWaitPourcent . "%"; ?>"
-             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo $nbCommentWaitPourcent . "%"; ?> Commentaire en attente </div>
+        <div class="progress-bar bg-success" role="progressbar"
+             style="width: <?php echo $nbCommentWaitPourcent . "%"; ?>"
+             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo $nbCommentWaitPourcent . "%"; ?>
+            Commentaire en attente
+        </div>
 
-        <div class="progress-bar bg-success progress-orangered" role="progressbar" style="width: <?php echo $nbCommentDeclinedPourcent . "%"; ?>"
-             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><?php echo $nbCommentDeclinedPourcent . "%"; ?> Commentaire refusé</div>
+        <div class="progress-bar bg-success progress-orangered" role="progressbar"
+             style="width: <?php echo $nbCommentDeclinedPourcent . "%"; ?>"
+             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><?php echo $nbCommentDeclinedPourcent . "%"; ?>
+            Commentaire refusé
+        </div>
     </div>
 </div>

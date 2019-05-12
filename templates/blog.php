@@ -11,32 +11,34 @@ $this->title = "Blog";
 <br/>
 <div id="space"></div>
 <?php
-foreach ($articles as $article)
-{
-?>
+foreach ($articles as $article) {
+    ?>
     <div id="post">
-        <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
-        <p><?= html_entity_decode(substr(htmlspecialchars($article->getContent()), 0, 230))    ;?></p>
+        <h2>
+            <a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId()); ?>"><?= htmlspecialchars($article->getTitle()); ?></a>
+        </h2>
+        <p><?= html_entity_decode(substr(htmlspecialchars($article->getContent()), 0, 230)); ?></p>
 
-        <p> <?= htmlspecialchars($article->getUsername());?></p>
-        <p>Mis a jour le  : <?= htmlspecialchars($article->getDateAdded());?></p>
+        <p> <?= htmlspecialchars($article->getUsername()); ?></p>
+        <p>Mis a jour le : <?= htmlspecialchars($article->getDateAdded()); ?></p>
         <br/>
         <hr/>
     </div>
     <br>
-<?php
+    <?php
 }
 ?>
 
 
 <body id="page-top" class="index">
 
-<!-- Navigation -->
+
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
+
         <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="#page-top">Sacha Durand</a>
@@ -77,21 +79,20 @@ foreach ($articles as $article)
                 <div class="footer-col col-md-4">
                     <h3>Member Space</h3>
                     <?php
-                    if(isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
+                    if (isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
                         ?>
                         <?php
-                        if(isset($_SESSION['user']) == 'admin') {
+                        if (isset($_SESSION['user']) == 'admin') {
                             ?>
-                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg" >Le back-office</a> <br/><br/>
+                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg">Le back-office</a>
+                            <br/><br/>
                         <?php }
                         ?>
 
                         <a href="index.php?route=deconnexion" class="btn btn-success btn-lg"> Se déconnecter</a>
 
-                    <?php }
-                    else{
+                    <?php } else {
                         ?>
-
 
 
                         <br>
@@ -102,19 +103,19 @@ foreach ($articles as $article)
                         </p>
 
 
-
-
                         <?php
-                    }?>
+                    } ?>
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Around the Web</h3>
                     <ul class="list-inline">
                         <li>
-                            <a href="https://github.com/DurandSacha/" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            <a href="https://github.com/DurandSacha/" class="btn-social btn-outline"><i
+                                        class="fa fa-fw fa-github"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/sacha-durand-687032150" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/sacha-durand-687032150" class="btn-social btn-outline"><i
+                                        class="fa fa-fw fa-linkedin"></i></a>
                         </li>
                         <li>
 
@@ -122,7 +123,8 @@ foreach ($articles as $article)
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>About me</h3>
-                    <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    <p>Freelance is a free to use, open source Bootstrap theme created by <a
+                                href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                 </div>
             </div>
         </div>
@@ -138,17 +140,11 @@ foreach ($articles as $article)
     </div>
 </footer>
 
-
-
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
     <a class="btn btn-primary" href="#page-top">
         <i class="fa fa-chevron-up"></i>
     </a>
 </div>
-
-
-
 
 
 </body>

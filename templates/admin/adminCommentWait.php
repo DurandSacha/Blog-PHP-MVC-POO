@@ -13,7 +13,7 @@ $this->title ="Attente commentaire - Back-office";
 
     if (isset($comments)) {
 
-        foreach ($comments as $comment) {   /*htmlspecialchars($article->getId());*/
+        foreach ($comments as $comment) {
             ?>
             <div class="row">
                 <div id="range">
@@ -41,11 +41,6 @@ $this->title ="Attente commentaire - Back-office";
                 </div>
             </div>
 
-            <!-- essai boite de dialogue suppression -->
-
-            <!--  <a href="index.php?route=declineComment&id=< ?php echo htmlspecialchars($comment->getId()); ?>"
-                                       type="button" class="btn btn-default" ><i class="fa fa-times"></i> Delete</a>
-                                       -->
             <div class=" portfolio-modal modal fade" id="comfirmDelete" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="alert alert-danger" role="alert">
                     <p> Etes vous sur de vouloir supprimer ce commentaire ?<br/> </p>
@@ -73,4 +68,6 @@ $this->title ="Attente commentaire - Back-office";
     <br/>
 
 </div>
+
+
 

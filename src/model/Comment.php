@@ -5,15 +5,15 @@ namespace App\src\model;
 class Comment
 {
     private $id;
-    
+
     private $pseudo;
-    
+
     private $content;
-    
+
     private $dateAdded;
 
     private $status;
-    
+
     public function getId()
     {
         return $this->id;
@@ -74,3 +74,4 @@ class Comment
         $this->article_id = $article_id;
     }
 }
+

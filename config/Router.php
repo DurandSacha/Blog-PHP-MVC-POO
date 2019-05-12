@@ -43,7 +43,6 @@ class Router
                 } else if ($_GET['route'] === 'connect') {
                     $this->connexionController->connect($_POST);
                     //$this->backController-> adminArticle();
-
                 } else if ($_GET['route'] === 'register') {
                     $this->connexionController->register($_POST);
                 } else if ($_GET['route'] === 'deconnexion') {
@@ -60,21 +59,16 @@ class Router
                     $this->backController->adminCommentaireWaiting();
                 } else if ($_GET['route'] === 'addComment') {
                     $this->backController->addComment($_POST);
-
-
                 } else if ($_GET['route'] === 'acceptComment') {
                     $this->backController->acceptComment($_GET['id']);
                 } else if ($_GET['route'] === 'declineComment') {
                     $this->backController->declineComment($_GET['id']);
-
                 } else if ($_GET['route'] === 'declineUser') {
                     $this->backController->declineUser($_GET['id']);
-
                 } else if ($_GET['route'] === 'acceptUser') {
                     $this->backController->acceptUser($_GET['id']);
                 } else if ($_GET['route'] === 'requestUser') {
                     $this->backController->requestUser($_GET['id']);
-
                 } else if ($_GET['route'] === 'admindroit') {
                     $this->backController->adminDroit();
                 } else if ($_GET['route'] === 'cv') {
@@ -86,7 +80,6 @@ class Router
                 }
             } else {
                 $this->frontController->home();
-
             }
         } catch (Exception $e) {
             $this->ErrorController->error();
@@ -99,10 +92,6 @@ class Router
         if (isset($tableau[$nom])) {
             return $tableau[$nom];
         }
-
     }
-
-
 }
-
 

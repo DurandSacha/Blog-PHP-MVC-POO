@@ -18,3 +18,4 @@ class ErrorController
         $this->view->render('error');
     }
 }
+

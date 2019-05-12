@@ -9,8 +9,7 @@
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+
                 <form method="POST" action="../public/index.php?route=register">
 
                     <div class="row control-group">
@@ -25,7 +24,8 @@
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Name</label>
-                            <input type="pseudo" class="form-control" placeholder="username" id="username" name="username"
+                            <input type="pseudo" class="form-control" placeholder="username" id="username"
+                                   name="username"
                                    required data-validation-required-message="Please enter your username.">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -34,7 +34,8 @@
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label> new password</label>
-                            <input type="password" class="form-control" placeholder="Mot de passe" id="password" name="password"
+                            <input type="password" class="form-control" placeholder="Mot de passe" id="password"
+                                   name="password"
                                    required data-validation-required-message="Please enter your password.">
                             <p class="help-block text-danger"></p>
                         </div>

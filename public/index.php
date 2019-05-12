@@ -1,7 +1,7 @@
 <?php
 require_once '../config/dev.php';
-require '../config/Autoloader.php'; // avant ../
-require '../vendor/autoload.php'; // avant ../
+require '../config/Autoloader.php';
+require '../vendor/autoload.php';
 \App\config\Autoloader::register();
 
 session_start();

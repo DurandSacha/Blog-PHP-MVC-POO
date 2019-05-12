@@ -10,7 +10,7 @@ $this->title ="Commentaires - Back-office";
     <a href="index.php?route=admincommentaireWait" class="btn btn-success btn-md"> commentaires en attentes</a><br/><br/>
     <?php
     foreach ($comments as $comment)
-    {   /*htmlspecialchars($article->getId());*/
+    {
     ?>
     <div class="row">
     <div id="range">

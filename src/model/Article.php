@@ -7,34 +7,34 @@ class Article
     private $id;
 
     private $title;
-    
+
     private $art_content;
-    
+
     private $user_id;
-    
+
     private $art_date_added;
 
     private $username;
 
-    
+
     public function getId()
     {
         return $this->id;
     }
 
-    
+
     public function setId($id)
     {
         $this->id = $id;
     }
 
-    
+
     public function getTitle()
     {
         return $this->title;
     }
 
-    
+
     public function setTitle($title)
     {
         $this->title = $title;
@@ -80,3 +80,4 @@ class Article
         $this->username = $username;
     }
 }
+

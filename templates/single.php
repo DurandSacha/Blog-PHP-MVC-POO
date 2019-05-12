@@ -20,18 +20,18 @@ $this->title = "Article";
     foreach ($comments as $comment) {
         ?>
         <?php
-         if($comment->getstatus() == 'declined'){ echo htmlspecialchars($comment->getPseudo()) . '<h6>Ce commentaire a été modéré</h6> <br/><br/>';
-         }
-         else {
-             ?>
-             <div id="single_comment">
-                 <h4><?= htmlspecialchars($comment->getPseudo()); ?></h4>
-                 <p><?= html_entity_decode(htmlspecialchars($comment->getContent())); ?></p>
-                 <p>Posté le <?= htmlspecialchars($comment->getDateAdded()); ?></p>
-             </div>
+        if ($comment->getstatus() == 'declined') {
+            echo htmlspecialchars($comment->getPseudo()) . '<h6>Ce commentaire a été modéré</h6> <br/><br/>';
+        } else {
+            ?>
+            <div id="single_comment">
+                <h4><?= htmlspecialchars($comment->getPseudo()); ?></h4>
+                <p><?= html_entity_decode(htmlspecialchars($comment->getContent())); ?></p>
+                <p>Posté le <?= htmlspecialchars($comment->getDateAdded()); ?></p>
+            </div>
 
-             <?php
-         }
+            <?php
+        }
     }
     ?>
 
@@ -59,7 +59,8 @@ $this->title = "Article";
                         <label for="content">Contenu</label><br>
                         <textarea id="content" name="content"></textarea><br>
 
-                        <input type="text" value="<?php echo $_GET['idArt']; ?>" id="id" name="id" class="none"><br/><br/>
+                        <input type="text" value="<?php echo $_GET['idArt']; ?>" id="id" name="id"
+                               class="none"><br/><br/>
 
                         <input type="submit" value="Poster le commentaire" id="submit" name="submit"
                                class="btn btn-success btn-lg">
@@ -133,21 +134,20 @@ $this->title = "Article";
                 <div class="footer-col col-md-4">
                     <h3>Member Space</h3>
                     <?php
-                    if(isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
+                    if (isset($_SESSION['user']) == 'membre' or isset($_SESSION['user']) == 'admin') {
                         ?>
                         <?php
-                        if(isset($_SESSION['user']) == 'admin') {
+                        if (isset($_SESSION['user']) == 'admin') {
                             ?>
-                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg" >Le back-office</a> <br/><br/>
+                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg">Le back-office</a>
+                            <br/><br/>
                         <?php }
                         ?>
 
                         <a href="index.php?route=deconnexion" class="btn btn-success btn-lg"> Se déconnecter</a>
 
-                    <?php }
-                    else{
+                    <?php } else {
                         ?>
-
 
 
                         <br>
@@ -158,19 +158,19 @@ $this->title = "Article";
                         </p>
 
 
-
-
                         <?php
-                    }?>
+                    } ?>
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Around the Web</h3>
                     <ul class="list-inline">
                         <li>
-                            <a href="https://github.com/DurandSacha/" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            <a href="https://github.com/DurandSacha/" class="btn-social btn-outline"><i
+                                        class="fa fa-fw fa-github"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/sacha-durand-687032150" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/sacha-durand-687032150" class="btn-social btn-outline"><i
+                                        class="fa fa-fw fa-linkedin"></i></a>
                         </li>
                         <li>
 
@@ -178,7 +178,8 @@ $this->title = "Article";
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>About me</h3>
-                    <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    <p>Freelance is a free to use, open source Bootstrap theme created by <a
+                                href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                 </div>
             </div>
         </div>
@@ -195,7 +196,7 @@ $this->title = "Article";
 </footer>
 
 
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+
 <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
     <a class="btn btn-primary" href="#page-top">
         <i class="fa fa-chevron-up"></i>
