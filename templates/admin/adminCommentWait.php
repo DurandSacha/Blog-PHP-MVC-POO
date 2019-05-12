@@ -1,5 +1,6 @@
 <?php
 include '../templates/inc/baseAdmin.php';
+$this->title ="Attente commentaire - Back-office";
 ?>
 
 <br/>
@@ -25,13 +26,16 @@ include '../templates/inc/baseAdmin.php';
                             <?php echo html_entity_decode(substr(htmlspecialchars($comment->getContent()), 0, 100)) ?>
                         </p>
                     </div>
-                    <div class="col-lg-1">
-                        <a href="#comfirmDelete"  data-toggle="modal"
-                           class="red btn btn-success btn-md"> Decline</a>
-                    </div>
-                    <div class="col-lg-1">
-                        <a href="index.php?route=acceptComment&id=<?php echo htmlspecialchars($comment->getId()); ?>"
-                           class="btn btn-success btn-md"> Validate</a>
+
+                    <div class="bouton-groupe">
+                        <div class="col-lg-3">
+                            <a href="#comfirmDelete"  data-toggle="modal"
+                               class="red btn btn-success btn-md"> Decline</a>
+                        </div>
+                        <div class="col-lg-3">
+                            <a href="index.php?route=acceptComment&id=<?php echo htmlspecialchars($comment->getId()); ?>"
+                               class="btn btn-success btn-md"> Validate</a>
+                        </div>
                     </div>
 
                 </div>

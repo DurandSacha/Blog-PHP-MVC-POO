@@ -1,5 +1,6 @@
 <?php
 include '../templates/inc/baseAdmin.php';
+$this->title ="Commentaires - Back-office";
 ?>
 <br/>
 <br/>

@@ -625,37 +625,28 @@ margin-top:0;
   margin:0;
   padding:0;
 }
+.green{
+  font-weight: bold;
+  color : #1c7430;
+  font-size: 20px;
+}
 
+.progress-red{
+  background-color: red;
+}
+.progress-orangered{
+  background-color: orangered;
+}
 /****************************************************************************************************/
 
 /* MEDIA QUERY */
 @media all and (max-device-width: 480px)
 {
-  .row{
-    margin-top: 20%;
+  .bouton-groupe{
+    display: flex;
+    flex-direction: row;;
   }
-  .admin p{
-    font-size: 33px;
-  }
-  .admin{
-    font-size: 45px;
-  }
-  .btn{
-    font-size: 48px;
-    margin-bottom: 18px;
 
-  }
-  p{
-    font-size: 40px;
-  }
-  .back-office h6{
-    font-size: 38px;
-  }
-  .back-office .info{
-    font-size: 43px;
-    color: #00aa88;
-    font-weight: bold;
-  }
 }
 
 

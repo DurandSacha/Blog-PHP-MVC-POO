@@ -34,7 +34,7 @@ $this->title = "Acceuil";
                     </li>
 
                     <li class="push page-scroll" >
-                        <a href="../public/index.php?route=blog" class="btn btn-success btn-lg" >Blog</a>
+                        <a href="../public/index.php?route=blog" class="btn btn-success btn-lg bouton-vert" >Blog</a>
                     </li>
                 </ul>
             </div>
@@ -229,14 +229,13 @@ $this->title = "Acceuil";
 
                         if(isset($_SESSION['user'])) {
 
-                            echo 'bonjour' . ' ' . $_SESSION['user']['name'] . '<br/><br/>';
+                            echo 'bonjour' . ' ' . '<span class="green">' . $_SESSION['user']['name'] . '</span><br/><br/>';
 
                             if($_SESSION['user']['role'] == 'admin') {
                             ?>
                                 <a href="index.php?route=adminarticle" class="btn btn-success btn-lg">Le back-office</a>
                                 <br/><br/>
                                 <?php
-                                var_dump($_SESSION['user']['role']);
                                 ?>
 
 

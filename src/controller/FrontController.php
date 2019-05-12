@@ -62,6 +62,10 @@ class FrontController
         return false;
     }
 
+
+        // peut etre nécéssaire
+        // ini_set("SMTP", "smtp.mondomaine.com");
+
         ini_set("SMTP", "smtp.gmail.com");
         ini_set("smtp_port", 587 ); // ou 465
         ini_set("auth_username", "sacha6623@gmail.com");
@@ -73,12 +77,16 @@ class FrontController
     $message = strip_tags(htmlspecialchars($_POST['message']));
 
     // Create the email and send the message
-    $to = 'sacha6623@gmail.com'; // Destinataire
+    $to = $email_address; // Destinataire
     $email_subject = "Website Contact Form:  $name"; // objet
-    $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
-    $headers = "From: sacha6623@gmail.com\n"; // Email générateur.
+
+    $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: 
+    $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
+
+    $headers = "From: mail@sachadurand.fr\n"; // Email générateur.     // mail@sachadurand.fr ( mail OVH )
     $headers .= "Reply-To: $email_address";
     mail($to,$email_subject,$email_body,$headers);
+
     header('Location: ../public/index.php');
 
     return true;

@@ -1,5 +1,7 @@
 <?php
 include '../templates/inc/baseAdmin.php';
+$this->title ="Article - Back-office";
+
 ?>
 <br/>
 <br/>
@@ -17,14 +19,19 @@ include '../templates/inc/baseAdmin.php';
                 <div class="col-lg-4 col-sm-4 col-sm-4">
                     <p>n°<?php echo htmlspecialchars($article->getId());?>. <?php echo htmlspecialchars($article->getTitle());?></p>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <a href="index.php?route=editArticle&id=<?php echo htmlspecialchars($article->getId());?>" 
-                    class="btn btn-success btn-md"> Update</a>
+
+                <div class="bouton-groupe">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <a href="index.php?route=editArticle&id=<?php echo htmlspecialchars($article->getId());?>"
+                        class="btn btn-success btn-md"> Update</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <a href="#comfirmDelete"  data-toggle="modal"
+                        class="red btn btn-success btn-md"> Delete</a>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <a href="#comfirmDelete"  data-toggle="modal"
-                    class="red btn btn-success btn-md"> Delete</a>
-                </div>
+
+
 
             </div>
         </div>

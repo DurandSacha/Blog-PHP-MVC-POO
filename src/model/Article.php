@@ -14,6 +14,8 @@ class Article
     
     private $art_date_added;
 
+    private $username;
+
     
     public function getId()
     {
@@ -66,5 +68,15 @@ class Article
     public function setDateAdded($art_date_added)
     {
         $this->art_date_added = $art_date_added;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 }

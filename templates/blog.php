@@ -18,7 +18,7 @@ foreach ($articles as $article)
         <h2><a href="../public/index.php?route=article&idArt=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
         <p><?= html_entity_decode(substr(htmlspecialchars($article->getContent()), 0, 230))    ;?></p>
 
-        <p><?= htmlspecialchars($article->getUser_id());?></p>
+        <p> <?= htmlspecialchars($article->getUsername());?></p>
         <p>Mis a jour le  : <?= htmlspecialchars($article->getDateAdded());?></p>
         <br/>
         <hr/>

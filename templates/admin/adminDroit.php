@@ -1,5 +1,6 @@
 <?php
 include '../templates/inc/baseAdmin.php';
+$this->title ="Droit - Back-office";
 ?>
 <br/>
 <br/>
@@ -23,13 +24,15 @@ include '../templates/inc/baseAdmin.php';
                 </div>
 
 
-                <div class="col-lg-1">
-                    <a href="#comfirmDelete"  data-toggle="modal"
-                       class="red btn btn-success btn-md"> Decline</a>
-                </div>
-                <div class="col-lg-2">
-                    <a href="index.php?route=acceptUser&id=<?php echo htmlspecialchars($privilege->getId()); ?>"
-                       class="btn btn-success btn-md"> Accept Request</a>
+                <div class="bouton-groupe">
+                    <div class="col-lg-2">
+                        <a href="#comfirmDelete"  data-toggle="modal"
+                           class="red btn btn-success btn-md"> Decline</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="index.php?route=acceptUser&id=<?php echo htmlspecialchars($privilege->getId()); ?>"
+                           class="btn btn-success btn-md"> Accept Request</a>
+                    </div>
                 </div>
             </div>
         </div>

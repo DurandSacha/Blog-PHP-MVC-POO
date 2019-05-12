@@ -5,13 +5,11 @@ $this->title = "Back-office";
 include '../templates/inc/baseAdmin.php';
 ?>
 
-<!-- Mise en forme bibliotheque chart.js // google charts // ZingChart // HighCharts (3D) -->
+
 <div class="row back-office">
     <br/>
     <br/>
-    <br/>
-    <br/>
-    <div class="box col-lg-offset-2 col-sm-offset-1 col-sm-10 col-lg-3">
+    <div class="box col-lg-offset-2 col-sm-offset-1 col-md-8 col-lg-3">
         <h6>commentaire en attente <br/>
             <span class="info"> <?php echo $nbComments; ?> </span>
         </h6>
@@ -38,5 +36,20 @@ include '../templates/inc/baseAdmin.php';
         </h6>
     </div>
 
+</div>
 
+<br/>
+<br/>
+<div class="row back-office">
+    <div class="col-lg-10 col-lg-offset-1 ">
+
+        <div class="progress-bar progress-red" role="progressbar" style="width: <?php echo $nbCommentDonePourcent . "%"; ?>"
+             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo $nbCommentDonePourcent . "%"; ?> Commentaire Accepté</div>
+
+        <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $nbCommentWaitPourcent . "%"; ?>"
+             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo $nbCommentWaitPourcent . "%"; ?> Commentaire en attente </div>
+
+        <div class="progress-bar bg-success progress-orangered" role="progressbar" style="width: <?php echo $nbCommentDeclinedPourcent . "%"; ?>"
+             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><?php echo $nbCommentDeclinedPourcent . "%"; ?> Commentaire refusé</div>
+    </div>
 </div>

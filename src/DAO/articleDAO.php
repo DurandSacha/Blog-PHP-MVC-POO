@@ -8,32 +8,34 @@ class ArticleDAO extends DAO
 {
     public function getArticles()
     {
-        $sql = 'SELECT id, title, art_content, user_id, art_date_added FROM article ORDER BY id DESC';
+        /*$sql = 'SELECT id, title, art_content, user_id, art_date_added FROM article ORDER BY id DESC';*/
         // jointure sur table article , champs user_id
         // recuperer "username" de la table "user"
-        /*
-         $sql = 'SELECT article.id, title, content, username, date_added
+
+         $sql = 'SELECT article.id, title, art_content, user.username, art_date_added,user_id
                 FROM article
                 INNER JOIN user
-                ORDER BY id DESC';
-        */
+                ORDER BY article.id DESC';
+
         $result = $this->sql($sql);
+
         $articles = [];
         foreach ($result as $row) {
             $articleId = $row['id'];
             $articles[$articleId] = $this->buildObject($row);
+            /*var_dump($articles);*/
         }
         return $articles;
     }
 
     public function getArticle($idArt)
     {
-        $sql = 'SELECT id, title, art_content, user_id, art_date_added FROM article WHERE id = ?';
+        $sql = 'SELECT article.id, title, art_content, username, art_date_added,user_id  FROM article  INNER JOIN user WHERE article.id = ?';
         $result = $this->sql($sql, [$idArt]);
         $row = $result->fetch();
-        if($row) {
+        if($result) {
             return $this->buildObject($row);
-        } 
+        }
         echo 'Aucun article existant avec cet identifiant :(';
     }
 
@@ -61,7 +63,10 @@ class ArticleDAO extends DAO
 
     public function articleCount()
     {
-        $sql = 'SELECT * FROM article';
+        $sql = 'SELECT article.id, title, art_content, username, art_date_added,user_id
+                FROM article
+                INNER JOIN user
+                ORDER BY id DESC';
         $result = $this->sql($sql);
 
         $article = [];
@@ -83,6 +88,7 @@ class ArticleDAO extends DAO
         $article->setContent($row['art_content']);
         $article->setDateAdded($row['art_date_added']);
         $article->setUser_id($row['user_id']);
+        $article->setUsername($row['username']);
         return $article;
     }
 }

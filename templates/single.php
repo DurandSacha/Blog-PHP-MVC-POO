@@ -9,7 +9,7 @@ $this->title = "Article";
     <h2><?= htmlspecialchars($article->getTitle()); ?></h2>
 
     <p><?= html_entity_decode(htmlspecialchars($article->getContent())); ?></p>
-    <p><?= htmlspecialchars($article->getUser_id()); ?></p>
+    <p><?= htmlspecialchars($article->getUsername()); ?></p>
     <p>Mis a jour le : <?= htmlspecialchars($article->getDateAdded()); ?></p>
 </div>
 <br>

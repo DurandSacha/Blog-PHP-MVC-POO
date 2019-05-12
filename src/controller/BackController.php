@@ -189,7 +189,6 @@ class BackController
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
 
-
             if (isset($post['submit'])) {
                 $articleDAO = new ArticleDAO();
                 $articleDAO->addArticle($post);
@@ -218,16 +217,12 @@ class BackController
             } else {
                 echo $_GET['id'];
             }
-            $articles = $this->articleDAO->getArticles();
             if (isset($_GET['id'])) {
                 $articleDAO = new ArticleDAO();
                 $articleDAO->rmArticle($post);
 
-                $this->view->render('admin/adminArticle', [
-                    'articles' => $articles,
-                ]);
-
             }
+            $articles = $this->articleDAO->getArticles();
             $this->view->render('admin/adminArticle', [
                 'articles' => $articles,
             ]);
@@ -240,11 +235,23 @@ class BackController
         $nbAdmin = $this->userDAO->adminCount();
         $nbAdminWait = $this->userDAO->adminWaitCount();
 
+
+        $nbCommentWait = $this->commentDAO->commentWaitCount();
+        $nbCommentDone = $this->commentDAO->commentDoneCount();
+        $nbCommentDeclined = $this->commentDAO->commentDeclinedCount();
+
+        $nbCommentDonePourcent =  ($nbCommentDone * 100)/ $nbComments;
+        $nbCommentDeclinedPourcent =  ($nbCommentDeclined * 100)/ $nbComments;
+        $nbCommentWaitPourcent  =  ($nbCommentWait * 100)/ $nbComments;
+
         $this->view->render('admin/back-office', [
             'nbComments' => $nbComments,
             'nbArticles' => $nbArticles,
             'nbAdmin' => $nbAdmin,
-            'nbAdminWait' => $nbAdminWait
+            'nbAdminWait' => $nbAdminWait,
+            'nbCommentDonePourcent' => $nbCommentDonePourcent,
+            'nbCommentDeclinedPourcent' => $nbCommentDeclinedPourcent,
+            'nbCommentWaitPourcent' => $nbCommentWaitPourcent
         ]);
     }
 

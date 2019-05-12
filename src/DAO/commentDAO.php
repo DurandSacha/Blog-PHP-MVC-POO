@@ -64,16 +64,16 @@ class CommentDAO extends DAO
         $this->sql($sql, ['declined', $idComment]);
     }
 
-    public function addComment(string $content, int $article_id, string $pseudo): void
+    public function addComment($content, $article_id, $pseudo)      // (string $content, int $article_id, string $pseudo): void
     {
 
-        $sql = 'INSERT INTO comment (pseudo, content, date_added, article_id) VALUES (?,?,NOW(),?)';
-        $this->sql($sql, [$pseudo, $content, $article_id]);
+        $sql = 'INSERT INTO comment (pseudo, content, date_added, article_id, status) VALUES (?,?,NOW(),?,?)';
+        $this->sql($sql, [$pseudo, $content, $article_id, 'waiting']);
     }
     public function commentCount()
     {
         
-        $sql = 'SELECT id, pseudo, content, date_added, article_id,status status FROM comment';
+        $sql = 'SELECT id, pseudo, content, date_added, article_id,status  FROM comment';
         $result = $this->sql($sql);
 
         $comments = [];
@@ -86,7 +86,50 @@ class CommentDAO extends DAO
         return $x;
     }
 
+    public function commentWaitCount()
+    {
 
+        $sql = 'SELECT * FROM comment WHERE status = ? ';
+        $result = $this->sql($sql, ['waiting']);
+        $comments = [];
+
+        $x = 0;
+        foreach ($result as $row) {
+            $commentId = $row['id'];
+            $comments[$commentId] = $this->buildObject($row);
+            $x = $x + 1 ;
+        }
+        return $x;
+
+    }
+    public function commentDoneCount()
+    {
+        $sql = 'SELECT * FROM comment WHERE status = ? ';
+        $result = $this->sql($sql, ['Accepted']);
+        $comments = [];
+
+        $x = 0;
+        foreach ($result as $row) {
+            $commentId = $row['id'];
+            $comments[$commentId] = $this->buildObject($row);
+            $x = $x + 1 ;
+        }
+        return $x;
+    }
+    public function commentDeclinedCount()
+    {
+        $sql = 'SELECT * FROM comment WHERE status = ? ';
+        $result = $this->sql($sql, ['declined']);
+        $comments = [];
+
+        $x = 0;
+        foreach ($result as $row) {
+            $commentId = $row['id'];
+            $comments[$commentId] = $this->buildObject($row);
+            $x = $x + 1 ;
+        }
+        return $x;
+    }
 
 
     private function buildObject(array $row)

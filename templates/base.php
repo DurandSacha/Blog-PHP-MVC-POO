@@ -6,8 +6,20 @@ require "../vendor/autoload.php";
 <html lang="fr">
 
 <head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Sacha Durand">
+
+    <title><?= $title ?></title>
+
+
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/chart/chart.js" rel="stylesheet">
+
     <link href="../public/css/style.css">
     <!-- Theme CSS -->
     <link href="../public/css/freelancer.css" rel="stylesheet">
