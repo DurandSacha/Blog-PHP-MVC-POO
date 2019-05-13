@@ -58,7 +58,7 @@ include '../templates/inc/baseAdmin.php';
         <div class="progress-bar bg-success progress-orangered" role="progressbar"
              style="width: <?php echo $nbCommentDeclinedPourcent . "%"; ?>"
              aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><?php echo $nbCommentDeclinedPourcent . "%"; ?>
-            Commentaire refusé
+             refusé
         </div>
     </div>
 </div>

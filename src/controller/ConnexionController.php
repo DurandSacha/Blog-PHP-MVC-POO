@@ -22,7 +22,7 @@ class ConnexionController
         $this->articleDAO = new ArticleDAO();
     }
 
-    public function connect($post)
+    public function connect()
     {
 
         if (isset($_POST['email']) && ($_POST['password'])) {
@@ -79,7 +79,7 @@ class ConnexionController
         }
     }
 
-    public function register($post)
+    public function register()
     {
         if (isset($_POST['email']) && ($_POST['username']) && ($_POST['password'])) {
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);

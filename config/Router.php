@@ -86,7 +86,6 @@ class Router
         }
     }
 
-    // Recherche un paramètre dans un tableau
     private function getParametre($tableau, $nom)
     {
         if (isset($tableau[$nom])) {

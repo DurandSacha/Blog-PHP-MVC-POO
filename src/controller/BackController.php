@@ -37,7 +37,7 @@ class BackController
         }
     }
 
-    public function editArticle($id)
+    public function editArticle()
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
             if (isset($_GET['id'])) {
@@ -122,7 +122,7 @@ class BackController
         }
     }
 
-    public function addComment($post)
+    public function addComment()
     {
         if (isset($_POST['content'])) {
 

@@ -22,7 +22,7 @@ class FrontController
     public function home()
     {
         $this->view->render('home', [
-            //'articles' => $articles
+
         ]);
     }
 
@@ -54,7 +54,7 @@ class FrontController
     {
         if (empty($_POST['name']) ||
             empty($_POST['email']) ||
-            empty($_POST['phone']) ||   // verifier 10 caractère
+            empty($_POST['phone']) ||
             empty($_POST['message']) ||
             !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             echo "No arguments Provided!";
@@ -75,7 +75,7 @@ class FrontController
         $email_subject = "Website Contact Form:  $name";
 
         $email_body = "You have received a new message from your website contact form.\n\n" . "Here are the details:\n\nName: 
-    $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
+        $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
 
         $headers = "From: mail@sachadurand.fr\n";
         $headers .= "Reply-To: $email_address";
