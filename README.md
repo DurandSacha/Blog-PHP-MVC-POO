@@ -14,7 +14,7 @@ For use this project...
 3. Clone this project in your repository or folder
 4. Change connexion information in dev.php (config folder)
 
-This website is available in sachadurand.fr/Projet5
+This website is available in "sachadurand.fr/Projet5"
 License : Free
 
 Suggestion and / or comments? Please create issues for this
