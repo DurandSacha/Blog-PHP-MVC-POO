@@ -54,7 +54,10 @@ rules:
     enabled: false
   php.use_exit_function:
     enabled: false
-
+  php.commented_out_code:
+    enabled: false
+  missing_e_o_l:
+    enabled: false
     ignore_files:
       - config/Router.php
     
