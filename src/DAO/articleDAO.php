@@ -41,7 +41,7 @@ class ArticleDAO extends DAO
         extract($article);
 
         $sql = 'INSERT INTO article (title, art_content, user_id, art_date_added) VALUES (?, ?, ?, NOW())';
-        $this->sql($sql, [$title, $content, $_SESSION['user']['id'] /*$author*/]);
+        $this->sql($sql, [$title, $content, $_SESSION['user']['id']]);
     }
 
     public function rmArticle($id)
