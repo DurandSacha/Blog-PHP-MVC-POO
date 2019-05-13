@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="355fbe52-ccf7-43b8-ac1b-441f8ca60455" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/BackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/BackController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ConnexionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ConnexionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/back-office.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/back-office.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +16,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/Router.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="408">
+                <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -83,6 +82,7 @@
         <option value="$PROJECT_DIR$/src/controller/ConnexionController.php" />
         <option value="$PROJECT_DIR$/src/controller/FrontController.php" />
         <option value="$PROJECT_DIR$/config/Router.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -224,12 +224,12 @@
       <workItem from="1556474625461" duration="40802000" />
       <workItem from="1557440966454" duration="12115000" />
       <workItem from="1557523494907" duration="14715000" />
-      <workItem from="1557700547840" duration="4167000" />
+      <workItem from="1557700547840" duration="6630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275898000" />
+    <option name="totallyTimeSpent" value="278361000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -401,13 +401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/editArticle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/inc/baseAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -576,8 +569,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/Router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="1479">
           <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
+          <folding>
+            <element signature="e#30#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/editArticle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="408">
+            <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
