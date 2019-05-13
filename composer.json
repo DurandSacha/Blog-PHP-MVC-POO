@@ -1,5 +1,6 @@
 {
   "name": "pckg/blog",
+  "license": "Openclassrooms",
   "require": {
     "twbs/bootstrap": "^4.3"
   },
