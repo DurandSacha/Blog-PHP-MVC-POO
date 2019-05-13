@@ -56,8 +56,6 @@ rules:
     enabled: false
   php.commented_out_code:
     enabled: false
-    ignore_files:
-      - config/Router.php
   missing_e_o_l:
     enabled: false
     
