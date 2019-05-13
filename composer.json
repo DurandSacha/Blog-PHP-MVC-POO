@@ -1,6 +1,8 @@
 {
   "name": "pckg/blog",
+  "description": "",
   "license": "Openclassrooms",
+
   "require": {
     "twbs/bootstrap": "^4.3"
   },
@@ -9,5 +11,12 @@
       "name": "sacha",
       "email": "sacha6623@gmail.com"
     }
-  ]
+    ],
+
+  "autoload": {
+    "psr-2": {
+      "App\\config\\":"config/",
+      "App\\src\\": "src/"
+    }
+  }
 }

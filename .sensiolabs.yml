@@ -41,3 +41,13 @@ commit_failure_conditions:
     #
     # # By total violations count, limited to the violations concerning files edited by the current PR
     # - "pr.violations > 150"
+    
+rules:
+  php.missing_use_statement:
+    enabled: false
+  php.dynamically_change_configuration:
+    enabled: false
+    
+    
+    
+    
