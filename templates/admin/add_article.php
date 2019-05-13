@@ -42,7 +42,6 @@ include '../templates/inc/baseAdmin.php';
                             class="form-control"
                     > <?php echo htmlspecialchars($author->getUsername()); ?>
                     </option>
-                    <!--<input type="text" class="form-control"value="< ?php echo htmlspecialchars($blogpost->getAuthor());?>" name="author"><br/><br/> -->
                     <?php
                 }
                 ?>
