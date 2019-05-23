@@ -9,9 +9,9 @@ The architecture uses object-oriented programming. You will see the associated s
 This folder summarizes the objectives and architecture of the site. 
 
 For use this project... 
-1. Import a SQL Database from SQL folder 
-2. Import user in database from SQL folder 
-3. Clone this project in your repository or folder
+1. Clone this project in your repository or folder
+2. Import a SQL Database from SQL folder
+3. Import user in database from SQL folder
 4. Change connexion information in dev.php (config folder)
 
 This website is available in "sachadurand.fr/Projet5"
