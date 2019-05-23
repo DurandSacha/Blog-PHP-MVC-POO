@@ -40,25 +40,31 @@ include '../templates/inc/baseAdmin.php';
 
 <br/>
 <br/>
-<div class="row back-office">
+<div class="row back-office statistic">
     <div class="col-lg-10 col-lg-offset-1 ">
 
-        <div class="progress-bar progress-red" role="progressbar"
-             style="width: <?php echo $nbCommentDonePourcent . "%"; ?>"
-             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo $nbCommentDonePourcent . "%"; ?>
-            Commentaire Accepté
-        </div>
+        <div class="row">
+            <div class="progress-bar progress-red" role="progressbar"
+                 style="width: <?php echo $nbCommentDonePourcent . "%"; ?>"
+                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo round($nbCommentDonePourcent) . "%"; ?>
+                Commentaire Accepté
+            </div>
 
-        <div class="progress-bar bg-success" role="progressbar"
-             style="width: <?php echo $nbCommentWaitPourcent . "%"; ?>"
-             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo $nbCommentWaitPourcent . "%"; ?>
-            Commentaire en attente
-        </div>
+            <div class="progress-bar bg-success" role="progressbar"
+                 style="width: <?php echo $nbCommentWaitPourcent . "%"; ?>"
+                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> <?php echo round($nbCommentWaitPourcent) . "%"; ?>
+                Commentaire en attente
+            </div>
 
-        <div class="progress-bar bg-success progress-orangered" role="progressbar"
-             style="width: <?php echo $nbCommentDeclinedPourcent . "%"; ?>"
-             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><?php echo $nbCommentDeclinedPourcent . "%"; ?>
-             refusé
+            <div class="progress-bar bg-success progress-orangered " role="progressbar"
+                 style="width: <?php echo $nbCommentDeclinedPourcent . "%"; ?>"
+                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><?php echo round($nbCommentDeclinedPourcent) . "%"; ?>
+                 refusé
+            </div>
+
+            <div>
+
+            </div>
         </div>
     </div>
 </div>

@@ -17,8 +17,8 @@ require "../vendor/autoload.php";
 
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../vendor/chart/chart.js" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
 
     <link href="../public/css/style.css">
     <!-- Theme CSS -->
@@ -39,7 +39,7 @@ require "../vendor/autoload.php";
 
 
 <!-- jQuery -->
-<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/jquery/jquery-3.4.1.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -52,5 +52,5 @@ require "../vendor/autoload.php";
 <script src="../public/js/contact_me.js"></script>
 
 <!-- Theme JavaScript -->
-<script src="../public/js/freelancer.min.js"></script>
+<script src="../public/js/freelancer.js"></script>
 </html>

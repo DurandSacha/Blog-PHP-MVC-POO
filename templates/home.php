@@ -24,17 +24,17 @@ $this->title = "Acceuil";
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li class="page-scroll">
-                    <a href="#portfolio">Portfolio</a>
+                <li class="">
+                    <a href="../public/index.php#portfolio">Portfolio</a>
                 </li>
-                <li class="page-scroll">
-                    <a href="#about">About</a>
+                <li class="">
+                    <a href="../public/index.php#about">About</a>
                 </li>
-                <li class="page-scroll">
-                    <a href="#contact">Contact</a>
+                <li class="">
+                    <a href="../public/index.php#contact">Contact</a>
                 </li>
 
-                <li class="push page-scroll">
+                <li class="push ">
                     <a href="../public/index.php?route=blog" class="btn btn-success btn-lg bouton-vert">Blog</a>
                 </li>
             </ul>
@@ -302,12 +302,7 @@ $this->title = "Acceuil";
     </div>
 </footer>
 
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-    <a class="btn btn-primary" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
-</div>
+
 
 
 <!-- Portfolio Modals -->

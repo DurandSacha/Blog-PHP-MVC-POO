@@ -35,6 +35,10 @@ class BackController
 
             ]);
         }
+        else{
+            $this->view->render('connect', [
+            ]);
+        }
     }
 
     public function editArticle()
@@ -51,6 +55,10 @@ class BackController
                 $this->view->render('home', [
                 ]);
             }
+        }
+        else{
+            $this->view->render('connect', [
+            ]);
         }
 
     }
@@ -70,6 +78,10 @@ class BackController
 
 
         }
+        else{
+            $this->view->render('connect', [
+            ]);
+        }
     }
 
 
@@ -80,6 +92,10 @@ class BackController
             $comments = $this->commentDAO->getCommentsList();
             $this->view->render('admin/adminCommentaire', [
                 'comments' => $comments,
+            ]);
+        }
+        else{
+            $this->view->render('connect', [
             ]);
         }
     }
@@ -93,6 +109,10 @@ class BackController
                 'comments' => $comments,
             ]);
 
+        }
+        else{
+            $this->view->render('connect', [
+            ]);
         }
     }
 
@@ -108,6 +128,10 @@ class BackController
             ]);
 
         }
+        else{
+            $this->view->render('connect', [
+            ]);
+        }
     }
 
     public function acceptComment($id)
@@ -118,6 +142,10 @@ class BackController
             $comments = $this->commentDAO->getCommentsWaiting();
             $this->view->render('admin/adminCommentWait', [
                 'comments' => $comments,
+            ]);
+        }
+        else{
+            $this->view->render('connect', [
             ]);
         }
     }
@@ -152,6 +180,10 @@ class BackController
                 'privileges' => $privileges,
             ]);
         }
+        else{
+            $this->view->render('connect', [
+            ]);
+        }
     }
 
     public function declineUser($id)
@@ -161,6 +193,10 @@ class BackController
             $privileges = $this->userDAO->getPrivilege();
             $this->view->render('admin/adminDroit', [
                 'privileges' => $privileges,
+            ]);
+        }
+        else{
+            $this->view->render('connect', [
             ]);
         }
     }
@@ -174,6 +210,10 @@ class BackController
                 'privileges' => $privileges,
             ]);
 
+        }
+        else{
+            $this->view->render('connect', [
+            ]);
         }
     }
 
@@ -206,8 +246,10 @@ class BackController
                     'authors' => $authors
                 ]);
             }
-
-
+        }
+        else{
+            $this->view->render('connect', [
+            ]);
         }
     }
 
@@ -228,33 +270,43 @@ class BackController
                 'articles' => $articles,
             ]);
         }
+        else{
+            $this->view->render('connect', [
+            ]);
+        }
     }
 
     public function backOffice()
     {
-        $nbComments = $this->commentDAO->commentCount();
-        $nbArticles = $this->articleDAO->articleCount();
-        $nbAdmin = $this->userDAO->adminCount();
-        $nbAdminWait = $this->userDAO->adminWaitCount();
+        if (isset($_SESSION['user']['role']) == 'admin') {
+            $nbComments = $this->commentDAO->commentCount();
+            $nbArticles = $this->articleDAO->articleCount();
+            $nbAdmin = $this->userDAO->adminCount();
+            $nbAdminWait = $this->userDAO->adminWaitCount();
 
 
-        $nbCommentWait = $this->commentDAO->commentWaitCount();
-        $nbCommentDone = $this->commentDAO->commentDoneCount();
-        $nbCommentDeclined = $this->commentDAO->commentDeclinedCount();
+            $nbCommentWait = $this->commentDAO->commentWaitCount();
+            $nbCommentDone = $this->commentDAO->commentDoneCount();
+            $nbCommentDeclined = $this->commentDAO->commentDeclinedCount();
 
-        $nbCommentDonePourcent = ($nbCommentDone * 100) / $nbComments;
-        $nbCommentDeclinedPourcent = ($nbCommentDeclined * 100) / $nbComments;
-        $nbCommentWaitPourcent = ($nbCommentWait * 100) / $nbComments;
+            $nbCommentDonePourcent = ($nbCommentDone * 100) / $nbComments;
+            $nbCommentDeclinedPourcent = ($nbCommentDeclined * 100) / $nbComments;
+            $nbCommentWaitPourcent = ($nbCommentWait * 100) / $nbComments;
 
-        $this->view->render('admin/back-office', [
-            'nbComments' => $nbComments,
-            'nbArticles' => $nbArticles,
-            'nbAdmin' => $nbAdmin,
-            'nbAdminWait' => $nbAdminWait,
-            'nbCommentDonePourcent' => $nbCommentDonePourcent,
-            'nbCommentDeclinedPourcent' => $nbCommentDeclinedPourcent,
-            'nbCommentWaitPourcent' => $nbCommentWaitPourcent
-        ]);
+            $this->view->render('admin/back-office', [
+                'nbComments' => $nbComments,
+                'nbArticles' => $nbArticles,
+                'nbAdmin' => $nbAdmin,
+                'nbAdminWait' => $nbAdminWait,
+                'nbCommentDonePourcent' => $nbCommentDonePourcent,
+                'nbCommentDeclinedPourcent' => $nbCommentDeclinedPourcent,
+                'nbCommentWaitPourcent' => $nbCommentWaitPourcent
+            ]);
+        }
+        else{
+            $this->view->render('connect', [
+            ]);
+        }
     }
 
 

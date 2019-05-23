@@ -50,17 +50,17 @@ foreach ($articles as $article) {
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li class="page-scroll">
-                    <a href="index.php?#portfolio">Portfolio</a>
+                <li class="">
+                    <a href="../public/index.php#portfolio">Portfolio</a>
                 </li>
-                <li class="page-scroll">
-                    <a href="index.php?#about">About</a>
+                <li class="">
+                    <a href="../public/index.php#about">About</a>
                 </li>
-                <li class="page-scroll">
-                    <a href="index.php?#contact">Contact</a>
+                <li class="">
+                    <a href="../public/index.php#contact">Contact</a>
                 </li>
 
-                <li class="page-scroll">
+                <li class="">
                     <a href="../public/index.php?route=blog" class="btn btn-success btn-lg">Blog</a>
                 </li>
             </ul>
@@ -84,22 +84,22 @@ foreach ($articles as $article) {
                         <?php
                         if (isset($_SESSION['user']) == 'admin') {
                             ?>
-                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg">Le back-office</a>
+                            <a href="../public/index.php?route=adminarticle" class="btn btn-success btn-lg">Le back-office</a>
                             <br/><br/>
                         <?php }
                         ?>
 
-                        <a href="index.php?route=deconnexion" class="btn btn-success btn-lg"> Se déconnecter</a>
+                        <a href="../public/index.php?route=deconnexion" class="btn btn-success btn-lg"> Se déconnecter</a>
 
                     <?php } else {
                         ?>
 
 
                         <br>
-                        <a href="index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p><br>
+                        <a href="../public/index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p><br>
 
                         <p class="small"> Pas encore inscrit ? <br/>
-                            <a href="index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
+                            <a href="../public/index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
                         </p>
 
 
@@ -140,11 +140,7 @@ foreach ($articles as $article) {
     </div>
 </footer>
 
-<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-    <a class="btn btn-primary" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
-</div>
+
 
 
 </body>

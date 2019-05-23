@@ -646,6 +646,9 @@ margin-top:0;
     display: flex;
     flex-direction: row;;
   }
+  .statistic{
+    display: none;
+  }
 
 }
 
