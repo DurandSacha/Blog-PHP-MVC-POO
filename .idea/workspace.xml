@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="355fbe52-ccf7-43b8-ac1b-441f8ca60455" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/P5_BDD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/P5_BDD.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ .htaccess" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="151" column="34" lean-forward="true" selection-start-line="151" selection-start-column="34" selection-end-line="151" selection-end-column="34" />
+            <state relative-caret-position="238">
+              <caret line="238" column="101" selection-start-line="238" selection-start-column="101" selection-end-line="238" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -133,34 +131,7 @@
             <path>
               <item name="Blog-PHP-MVC-POO" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blog-PHP-MVC-POO" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-PHP-MVC-POO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-PHP-MVC-POO" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-PHP-MVC-POO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-PHP-MVC-POO" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-PHP-MVC-POO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-PHP-MVC-POO" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-PHP-MVC-POO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-PHP-MVC-POO" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-PHP-MVC-POO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-PHP-MVC-POO" type="462c0819:PsiDirectoryNode" />
-              <item name="UML" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -219,12 +190,12 @@
       <workItem from="1557955162228" duration="8886000" />
       <workItem from="1558627790110" duration="2500000" />
       <workItem from="1558718138371" duration="608000" />
-      <workItem from="1558718789528" duration="239000" />
+      <workItem from="1558718789528" duration="691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299036000" />
+    <option name="totallyTimeSpent" value="299488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -327,7 +298,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/UserDAO.php">
+    <entry file="file://$PROJECT_DIR$/src/DAO/userDAO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2686">
           <caret line="158" selection-start-line="158" selection-end-line="158" />
@@ -351,14 +322,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/ArticleDAO.php">
+    <entry file="file://$PROJECT_DIR$/src/DAO/articleDAO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-318">
           <caret line="43" column="67" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/CommentDAO.php">
+    <entry file="file://$PROJECT_DIR$/src/DAO/commentDAO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2278">
           <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
@@ -613,8 +584,8 @@
     <entry file="file://$PROJECT_DIR$/public/.htaccess" />
     <entry file="file://$PROJECT_DIR$/templates/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="151" column="34" lean-forward="true" selection-start-line="151" selection-start-column="34" selection-end-line="151" selection-end-column="34" />
+        <state relative-caret-position="238">
+          <caret line="238" column="101" selection-start-line="238" selection-start-column="101" selection-end-line="238" selection-end-column="101" />
         </state>
       </provider>
     </entry>
