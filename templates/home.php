@@ -145,13 +145,16 @@ $this->title = "Acceuil";
         </div>
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
-                <p>I am a web developer specialized in the back end. I use PHP and symfony to fill all
-                    kind of mission. I also master other technologies such as database-related language, HTML / CSS. I have
-                    also some notions of python and C</p>
+                <p>Je suis un développeur web spécialisé dans le back-end. J'utilise PHP et symfony pour remplir toute
+                    sorte de mission.
+                    Je maitrise aussi d'autres technologie comme les langage lié au bases de donnée, le HTML/CSS. J'ai
+                    aussi quelques notions de
+                    python et de C</p>
             </div>
             <div class="col-lg-4">
-                <p>I have been passionate about web technology for a long time. So I seek to educate myself
-                    in order to build a career from my passion. Back-end development is my specialty.
+                <p>Cela fait longtemps que je suis passionné par la technologie du web. J’ai donc chercher a m’instruire
+                    afin de construire
+                    une carrière a partir de ma passion. Le développement back-end est ma spécialité.
                 </p>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -236,7 +239,7 @@ $this->title = "Acceuil";
 
                         if ($_SESSION['user']['role'] == 'admin') {
                             ?>
-                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg">The back-office</a>
+                            <a href="index.php?route=adminarticle" class="btn btn-success btn-lg">Le back-office</a>
                             <br/><br/>
                             <?php
                             ?>
@@ -251,15 +254,15 @@ $this->title = "Acceuil";
                                 Demande d'administration</a> <br/><br/>
                         <?php } ?>
 
-                        <a href="index.php?route=deconnexion" class="btn btn-success btn-lg"> Deconnect</a>
+                        <a href="index.php?route=deconnexion" class="btn btn-success btn-lg"> Se déconnecter</a>
 
                         <?php
                     } else { ?>
                         <br>
-                        <a href="index.php?route=connect" class="btn btn-success btn-lg"> Login</a></p><br>
+                        <a href="index.php?route=connect" class="btn btn-success btn-lg"> Connexion</a></p><br>
 
-                        <p class="small"> Not member ? <br/>
-                            <a href="index.php?route=register" class="btn btn-success btn-lg"> Subscribe</a>
+                        <p class="small"> Pas encore inscrit ? <br/>
+                            <a href="index.php?route=register" class="btn btn-success btn-lg"> Inscription</a>
                         </p>
 
                         <?php
@@ -282,7 +285,8 @@ $this->title = "Acceuil";
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>About me</h3>
-                    <p>I'm Sacha Durand, a Web Back-end Developer.</p>
+                    <p>Freelance is a free to use, open source Bootstrap theme created by <a
+                                href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                 </div>
             </div>
         </div>

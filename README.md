@@ -10,7 +10,7 @@ This folder summarizes the objectives and architecture of the site.
 
 For use this project... 
 1. Clone this project in your repository or folder
-2. Import a SQL Database from SQL folder 
+2. Import a SQL Database from SQL folder
 3. Import user in database from SQL folder
 4. Change connexion information in dev.php (config folder)
 
