@@ -104,7 +104,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`, `role`, `privilege`) VALUES
 (1, 'sacha', 'sacha6623@gmail.com', '$2y$10$kE9frqoDAdq6vsea4bStW.CBN7e6kqYDDOOX8d0BH/lniE3KPDocC', 'administrator', 'None'),
-(2, 'john Doe', '1111@gmail.com', '$2y$10$9qQa5erU4Jop1Un953h8S.r8gK/.32bsdIZ545TrAzNzvPS4rQbYa', 'member', 'In Progress');
+(2, 'john Doe', '1111@gmail.com', '$2y$10$9qQa5erU4Jop1Un953h8S.r8gK/.32bsdIZ545TrAzNzvPS4rQbYa', 'member', 'In Progress'),
+(3, 'Nicolas', '2222@gmail.com', '$2y$10$9qQa5erU4Jop1Un953h8S.r8gK/.32bsdIZ545TrAzNzvPS4rQbYa', 'member', 'None'),
+(4, 'Charly', '3333@gmail.com', '$2y$10$9qQa5erU4Jop1Un953h8S.r8gK/.32bsdIZ545TrAzNzvPS4rQbYa', 'member', 'In Progress');
 
 --
 -- Contraintes pour les tables déchargées

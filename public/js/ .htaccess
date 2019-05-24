@@ -1,4 +1,4 @@
 AuthName "Page d'administration protégée"
 AuthType Basic
-AuthUserFile "/home/site/www/admin/.htpasswd"
+AuthUserFile "/www/Projet5/public.htpasswd"
 Require valid-user
