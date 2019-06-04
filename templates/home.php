@@ -35,7 +35,7 @@ $this->title = "Acceuil";
                 </li>
 
                 <li class="push ">
-                    <a href="../public/index.php?route=blog" class="btn btn-success btn-lg bouton-vert">Blog</a>
+                    <a href="../public/index.php?route=blog&page=1" class="btn btn-success btn-lg bouton-vert">Blog</a>
                 </li>
             </ul>
         </div>

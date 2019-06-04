@@ -45,4 +45,9 @@ abstract class DAO
         return $this->checkConnection()->query($sql);
 
     }
+
+    protected function attribuer($chaine,$variable)
+    {
+        $this->bindValue($chaine, intval($variable ), \PDO::PARAM_INT);
+    }
 }

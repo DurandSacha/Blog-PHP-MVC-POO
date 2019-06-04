@@ -26,11 +26,29 @@ class FrontController
         ]);
     }
 
-    public function blog()
+    public function blog($page)
     {
-        $articles = $this->articleDAO->getArticles();
+        $page = intval($page);
+        $articleInPage = 5 ;
+        $NombreArticleTotal = $this->articleDAO->articleCount();
+
+        if(isset($page) AND !empty($page)  )
+        {
+            $page = intval($page);
+            $pageCourante = $page;
+        }
+        else{
+            $pageCourante = 1;
+        }
+        $depart = ($pageCourante-1) *$articleInPage; ;
+
+
+        $articles = $this->articleDAO->getArticlesBlog($depart,$articleInPage );
+
         $this->view->render('blog', [
-            'articles' => $articles
+            'articles' => $articles,
+            'nbArticleTotal' =>$NombreArticleTotal,
+            'pageCourante' => $pageCourante
         ]);
     }
 

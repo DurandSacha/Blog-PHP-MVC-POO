@@ -38,9 +38,11 @@ class Router
                 } else if ($_GET['route'] === 'majArticle') {
                     $id = $this->getParametre($_POST, 'id');
                     $this->backController->updatePost($_POST);
+
                 } else if ($_GET['route'] === 'blog') {
-                    $this->frontController->blog();
-                } else if ($_GET['route'] === 'connect') {
+                    $this->frontController->blog($_GET['page']);
+                }
+                else if ($_GET['route'] === 'connect') {
                     $this->connexionController->connect($_POST);
                     //$this->backController-> adminArticle();
                 } else if ($_GET['route'] === 'register') {

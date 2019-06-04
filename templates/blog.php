@@ -29,6 +29,28 @@ foreach ($articles as $article) {
 }
 ?>
 
+<!-- pagination -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <h6> pagination </h6>
+        <?php
+        for($i=1;$i<=ceil($nbArticleTotal/10);$i++)
+        {
+            $affichage = ceil($i);
+            if ($affichage == $pageCourante)
+            {
+                echo '<li class="green" class="page-item"><a class="page-link" href="../public/index.php?route=blog&page=' . ceil($i) . '">' . $affichage . '</a></li>';
+            }
+            else {
+                echo '<li class="page-item"><a class="page-link" href="../public/index.php?route=blog&page=' . ceil($i) . '">' . $affichage . '</a></li>';
+            }
+        }
+        ?>
+    </ul>
+</nav>
+
+
+
 
 <body id="page-top" class="index">
 
@@ -61,7 +83,7 @@ foreach ($articles as $article) {
                 </li>
 
                 <li class="">
-                    <a href="../public/index.php?route=blog" class="btn btn-success btn-lg">Blog</a>
+                    <a href="../public/index.php?route=blog&page=1" class="btn btn-success btn-lg">Blog</a>
                 </li>
             </ul>
         </div>

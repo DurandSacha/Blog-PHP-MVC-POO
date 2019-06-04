@@ -24,6 +24,35 @@ class ArticleDAO extends DAO
         return $articles;
     }
 
+    public function getArticlesBlog($depart,$articleInPage)
+    {
+        /*
+        $depart = intval($depart);
+        $articleInPage = intval( $articleInPage);
+        */
+
+
+
+        $sql =('SELECT article.id, title, art_content, user.username, art_date_added,user_id 
+                FROM `article`
+                INNER JOIN user
+                ORDER BY article.id DESC 
+                LIMIT ' . $depart . ' , ' . $articleInPage . '');
+
+        $result = $this->sql($sql, [
+             ]);
+
+        $articles = [];
+        foreach ($result as $row) {
+            $articleId = $row['id'];
+            $articles[$articleId] = $this->buildObject($row);
+
+        }
+        return $articles;
+    }
+
+
+
     public function getArticle($idArt)
     {
         $sql = 'SELECT article.id, title, art_content, username, art_date_added,user_id  FROM article  INNER JOIN user WHERE article.id = ?';
