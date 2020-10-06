@@ -23,7 +23,6 @@ class BackController
         $this->userDAO = new UserDAO();
     }
 
-
     public function adminArticle()
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
@@ -66,8 +65,6 @@ class BackController
     public function updatePost($post)
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
-
-
             if (isset($post['submit'])) {
                 $id = $_POST['id'];
 
@@ -75,15 +72,12 @@ class BackController
                 $articleDAO->updatePost($_POST['title'], $_POST['content'], $id);
             }
             $this->editArticle($id);
-
-
         }
         else{
             $this->view->render('connect', [
             ]);
         }
     }
-
 
     public function adminCommentaire()
     {
@@ -108,7 +102,6 @@ class BackController
             $this->view->render('admin/adminCommentWait', [
                 'comments' => $comments,
             ]);
-
         }
         else{
             $this->view->render('connect', [
@@ -119,14 +112,11 @@ class BackController
     public function declineComment($id)
     {
         if (isset($_SESSION['user']['role']) == 'admin') {
-
-
             $this->commentDAO->declineComment($id);
             $comments = $this->commentDAO->getCommentsWaiting();
             $this->view->render('admin/adminCommentWait', [
                 'comments' => $comments,
             ]);
-
         }
         else{
             $this->view->render('connect', [
@@ -157,8 +147,6 @@ class BackController
             $article_id = $_POST['id'];
             $pseudo = $_SESSION['user']['name'];
             $this->commentDAO->addComment($_POST['content'], $article_id, $pseudo);
-
-
         }
         $article = $this->articleDAO->getArticle($article_id);
         $comments = $this->commentDAO->getCommentsFromArticle($article_id);
@@ -168,7 +156,6 @@ class BackController
         ]);
 
     }
-
 
     public function adminDroit()
     {
@@ -288,7 +275,6 @@ class BackController
             $nbCommentWait = $this->commentDAO->commentWaitCount();
             $nbCommentDone = $this->commentDAO->commentDoneCount();
             $nbCommentDeclined = $this->commentDAO->commentDeclinedCount();
-
             $nbCommentDonePourcent = ($nbCommentDone * 100) / $nbComments;
             $nbCommentDeclinedPourcent = ($nbCommentDeclined * 100) / $nbComments;
             $nbCommentWaitPourcent = ($nbCommentWait * 100) / $nbComments;
