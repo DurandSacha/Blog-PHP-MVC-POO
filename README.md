@@ -20,8 +20,8 @@ License : Free
 Suggestion and / or comments? Please create issues for this
 
 Standard : 
-- PSR2 ( https://www.php-fig.org/psr/psr-2/ ) 
-- silver medal in sensolabs ( https://insight.symfony.com )
+ 1. PSR2 ( https://www.php-fig.org/psr/psr-2/ ) 
+ 2. silver medal in sensolabs ( https://insight.symfony.com )
 
 
 
