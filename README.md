@@ -1,6 +1,4 @@
 
-
-Hello World ! 
 This website is a open-source blog/portfolio with a MVC ( Model View Controller ) architecture. Used for present project & blogpost. The website have a 
 administration zone where you can manage a article, comment, member.... 
 
